@@ -1,0 +1,864 @@
+// TODO:
+// when hover over *last* point display the color boxes for all games
+// when hover over the *first* point display all orientation bars
+
+function ptsMatch() {
+
+   var match_data;
+
+   var options = {
+
+      id: 0,
+      class: 'ptsMatch',
+
+      resize: true,
+      width: window.innerWidth,
+	   height: 80,
+
+      margins: {
+         top: 5, 
+         right: 15, 
+         bottom: 5, 
+         left: 5
+      },
+
+      set: {
+         average_points: 56
+      },
+
+      lines: {
+         width: 2,
+         interpolation: 'linear'
+      },
+
+      points: {
+         max_width_points: 100
+      },
+
+      score: {
+         font: 'Arial',
+         font_size: '12px',
+         font_weight: 'bold',
+         reverse: true
+      },
+
+      header: {
+         font: 'Arial',
+         font_size: '14px',
+         font_weight: 'bold'
+      },
+
+      display: {
+         sizeToFit: true,
+         transition_time: 0,
+         point_highlighting: true,
+         point_opacity: .4,
+         win_err_highlight: true,
+         game_highlighting: true,
+         game_opacity: .2,
+         game_boundaries: true,
+         gamepoints: false,
+         score: true,
+         points: true,
+         winner: true
+      },
+
+      colors: {
+         orientation: 'yellow',
+         gamepoints: 'black',
+         players: { 0: "#a55194", 1: "#6b6ecf" }
+      }
+   }
+
+   // functions which should be accessible via ACCESSORS
+   var update;
+
+   // programmatic
+   var pts_sets = [];
+   var dom_parent;
+
+   // prepare charts
+   pts_charts = [];
+   for (var s=0; s < 5; s++) {
+      pts_charts.push(ptsChart());
+   }
+
+   // DEFINABLE EVENTS
+   // Define with ACCESSOR function chart.events()
+   var events = {
+       'update': { begin: null, end: null},
+       'set_box': { 'mouseover': null, 'mouseout': null },
+       'update': { 'begin': null, 'end': null },
+       'point_bars': { 'mouseover': null, 'mouseout': null, 'click': null }
+   };
+
+   function chart(selection) {
+        dom_parent = selection;
+
+        // append svg
+        var root = dom_parent.append('div')
+            .attr('class', options.class + 'root')
+            .style('width', options.width + 'px')
+            .style('height', options.height + 'px' );
+
+        for (var s=0; s < 5; s++) {
+           pts_sets[s] = root.append("div").attr("class", "pts").style('display', 'none')
+           pts_sets[s]
+              .call(pts_charts[s]);
+        }
+
+        update = function() {
+           var sets = match_data.sets();
+
+           var true_height = 0;
+           for (var s=0; s < pts_charts.length; s++) {
+              if (sets[s] && sets[s].points().length) {
+                 pts_sets[s].style('display', 'inline')
+                 pts_charts[s].update();
+                 true_height += +options.height + 5;
+              } else {
+                 pts_sets[s].style('display', 'none')
+              }
+           }
+
+           // height needs to be adjusted to (# sets) * height of individuals charts + margins
+           root
+             .style('width', options.width + 'px')
+             .style('height', true_height + 'px');
+     
+        }
+   }
+
+    // ACCESSORS
+
+    // allows updating individual options and suboptions
+    // while preserving state of other options
+    chart.options = function(values) {
+        if (!arguments.length) return options;
+        keyWalk(values, options);
+        return chart;
+    }
+
+    function keyWalk(valuesObject, optionsObject) {
+        if (!valuesObject || !optionsObject) return;
+        var vKeys = Object.keys(valuesObject);
+        var oKeys = Object.keys(optionsObject);
+        for (var k=0; k < vKeys.length; k++) {
+           if (oKeys.indexOf(vKeys[k]) >= 0) {
+              var oo = optionsObject[vKeys[k]];
+              var vo = valuesObject[vKeys[k]];
+              if (typeof oo == 'object' && typeof vo !== 'function' && oo && oo.constructor !== Array) {
+                 keyWalk(valuesObject[vKeys[k]], optionsObject[vKeys[k]]);
+              } else {
+                 optionsObject[vKeys[k]] = valuesObject[vKeys[k]];
+              }
+           }
+        }
+    }
+
+    chart.events = function(functions) {
+         if (!arguments.length) return events;
+         keyWalk(functions, events);
+         return chart;
+    }
+
+    chart.colors = function(colores) {
+        if (!arguments.length) return options.colors;
+        options.colors.players = colores;
+        return chart;
+    }
+
+    chart.width = function(value) {
+        if (!arguments.length) return options.width;
+        options.width = value;
+        if (typeof update === 'function') update(true);
+        pts_charts.forEach(function(e) { e.width(value) });
+        return chart;
+    };
+
+    chart.height = function(value) {
+        if (!arguments.length) return options.height;
+        options.height = value;
+        if (typeof update === 'function') update(true);
+        pts_charts.forEach(function(e) { e.height(value) });
+        return chart;
+    };
+
+    chart.duration = function(value) {
+        if (!arguments.length) return options.display.transition_time;
+       options.display.transition_time = value;
+       return chart;
+    }
+
+    chart.update = function(resize) {
+       resize = resize ? resize : options.resize;
+       if (events.update.begin) events.update.begin(); 
+       var sets = match_data.sets();
+       sets.forEach(function(e, i) {
+          pts_charts[i].data(sets[i]);
+          pts_charts[i].options({ id: i, resize: resize });
+          pts_charts[i].options({ lines: options.lines, points: options.points, score: options.score, header: options.header});
+          pts_charts[i].options({ set: options.set, display: options.display, colors: options.colors});
+          pts_charts[i].events(events);
+          pts_charts[i].width(options.width).height(options.height).update();
+       })
+       if (typeof update === 'function') update(resize);
+       setTimeout(function() { 
+         if (events.update.end) events.update.end(); 
+       }, options.display.transition_time);
+       return true;
+    }
+
+    chart.data = function(matchObject) {
+       if (!arguments.length) { return match_data; }
+       if (typeof matchObject != 'function' || matchObject.type != 'UMO') return false;
+       match_data = matchObject;
+       chart.update();
+    }
+
+   function lastElement(arr) { return arr[arr.length - 1]; }
+
+   return chart;
+}
+
+function ptsChart() {
+
+    var set_data;
+
+    var game_data;
+    var player_data;
+
+    var winners = ['Ace', 'Winner', 'Serve Winner'];
+    var errors = ['Forced Error', 'Unforced Error', 'Double Fault', 'Penalty', 'Out', 'Net'];
+
+    var options = {
+      id: 0,
+      class: 'ptsChart',
+
+      resize: true,
+      width: window.innerWidth,
+	   height: 80,
+
+      margins: {
+         top: 5, 
+         right: 15, 
+         bottom: 5, 
+         left: 5
+      },
+
+      set: {
+         average_points: 56
+      },
+
+      lines: {
+         width: 2,
+         interpolation: 'linear'
+      },
+
+      points: {
+         max_width_points: 100
+      },
+
+      score: {
+         font: 'Arial',
+         font_size: '12px',
+         font_weight: 'bold',
+         reverse: true
+      },
+
+      header: {
+         font: 'Arial',
+         font_size: '14px',
+         font_weight: 'bold'
+      },
+
+      display: {
+         transition_time: 0,
+         point_highlighting: true,
+         point_opacity: .4,
+         win_err_highlight: true,
+         game_highlighting: true,
+         game_opacity: .2,
+         game_boundaries: false,
+         gamepoints: false,
+         score: true,
+         points: true,
+         winner: true
+      },
+
+      colors: {
+         orientation: 'yellow',
+         gamepoints: 'black',
+         players: { 0: "blue" , 1: "purple" }
+      }
+
+    }
+
+    // functions which should be accessible via ACCESSORS
+    var update;
+
+    // programmatic
+    var dom_parent;
+
+    // DEFINABLE EVENTS
+    // Define with ACCESSOR function chart.events()
+    var events = {
+       'set_box': { 'mouseover': null, 'mouseout': null },
+       'update': { 'begin': null, 'end': null },
+       'point_bars': { 'mouseover': null, 'mouseout': null, 'click': null }
+    };
+
+    function chart(selection) {
+        selection.each(function () {
+
+            dom_parent = d3.select(this);
+
+            // append svg
+            var root = dom_parent.append('svg')
+                .attr('class', options.class + 'root')
+                .style('width', options.width + 'px' )
+                .style('height', options.height + 'px' );
+
+            // append children g
+            var pts = root.append('g').attr('class', options.class + 'pts')
+                          .attr('transform', 'translate(5, 5)')
+
+            // For Point Bars which must always be on top
+            var ptsHover = root.append('g').attr('class', options.class + 'pts')
+                          .attr('transform', 'translate(5, 5)')
+
+            // append labels
+            var set_winner = pts.append('text')
+                    .attr('class', options.class + 'Header')
+                    .attr('opacity', 0)
+                    .attr('font-size', options.header.font_size)
+                    .attr('font-weight', options.header.font_weight)
+                    .attr('x', function(d, i) { return (options.margins.left) + 'px'})
+                    .attr('y', function(d, i) { return (options.margins.top + 8) + 'px' })
+
+            var set_score = pts.append('text')
+                    .attr('class', options.class + 'Score')
+                    .attr('opacity', 0)
+                    .attr('font-size', options.score.font_size)
+                    .attr('font-weight', options.score.font_weight)
+                    .attr('x', function(d, i) { return (options.margins.left) + 'px'})
+                    .attr('y', function(d, i) { return (options.margins.top + 20) + 'px' })
+
+            var set_points = pts.append('text')
+                    .attr('class', options.class + 'Points')
+                    .attr('opacity', 0)
+                    .attr('font-size', options.score.font_size)
+                    .attr('font-weight', options.score.font_weight)
+                    .attr('x', function(d, i) { return (options.margins.left + 40) + 'px'})
+                    .attr('y', function(d, i) { return (options.margins.top + 20) + 'px' })
+
+            // resize used to disable transitions during resize operation
+            update = function(resize) {
+               if (!set_data) { return false; }
+
+
+               root
+                .transition().duration(resize ? 0 : options.display.transition_time)
+                .style('width', options.width + 'px')
+                .style('height', options.height + 'px');
+        
+               var points = set_data.points();
+               var set_options = set_data.options();
+               game_data = set_data.games();
+               player_data = set_data.player_data();
+
+               var games4set = (set_options.set.games / 2) * 4;
+               var longest_rally = Math.max.apply(null, points.map(function(m) { return m.rally ? m.rally.length : 0 })) + 2;
+
+               displayScore(resize);
+
+               var xScale = d3.scale.linear()
+                    .domain([0, calcWidth()])
+                    .range([0, options.width - (options.margins.left + options.margins.right)]);
+
+               var yScale = d3.scale.linear()
+                    .range([options.height - (options.margins.top + options.margins.bottom), options.margins.bottom])
+                    .domain([-2, games4set - 1]);
+
+               // Set Box
+               var set_box = pts.selectAll("." + options.class + "SetBox")
+                   .data([options.id]) // # of list elements only used for index, data not important
+
+               set_box.enter()
+                   .append("rect")
+                   .attr("class", options.class + "SetBox")
+                   .style("position", "relative")
+                   .attr("height", function() { return options.height - (options.margins.top + options.margins.bottom) } )
+                   .attr("width", function() { return xScale(boxWidth() + 1); })
+                   .attr('stroke', 'black')
+                   .attr('stroke-width', 1)
+                   .attr('fill', 'none')
+                   .on('mouseover', function(d, i) { if (events.set_box.mouseover) events.set_box.mouseover(d, i); })
+                   .on('mouseout', function(d, i) { if (events.set_box.mouseout) events.set_box.mouseout(d, i); })
+
+                set_box.exit()
+                   .transition().duration(resize ? 0 : options.display.transition_time)
+                   .style('opacity', 0)
+                   .remove()
+
+                set_box
+                   .transition().duration(resize ? 0 : options.display.transition_time)
+                   .attr("height", function() { return options.height - (options.margins.top + options.margins.bottom) } )
+                   .attr("width", function() { return xScale(boxWidth() + 1); })
+
+                // Game Boundaries
+                var game_boundaries = pts.selectAll("." + options.class + "GameBoundary")
+                   .data(game_data)
+
+                game_boundaries.enter()
+                   .append('rect')
+                   .attr("class", options.class + "GameBoundary")
+
+                game_boundaries.exit()
+                   .remove()
+
+                game_boundaries
+                   .attr("id", function(d, i) { return options.class + options.id + 'boundary' + i; })
+                   .transition().duration(resize ? 0 : options.display.transition_time)
+                   .attr('opacity', function() { return options.display.game_boundaries ? .02 : 0 })
+                   .attr("transform", function(d, i) { return "translate(" + xScale(d.range[0]) + ", 0)"; })
+                   .attr("height", yScale(-2))
+                   .attr('width', function(d) { return xScale(d.range[1] + 1) - xScale(d.range[0]); })
+                   .attr('stroke', 'black')
+                   .attr('stroke-width', 1)
+                   .attr('fill', 'none')
+
+                // Game Boxes
+                var game_boxes = pts.selectAll("." + options.class + "Game")
+                   .data(game_data)
+
+                game_boxes.enter()
+                   .append('rect')
+                   .attr("class", options.class + "Game")
+
+                game_boxes.exit()
+                   .remove()
+
+                game_boxes
+                   .attr("id", function(d, i) { return options.class + options.id + 'game' + i; })
+                   .transition().duration(resize ? 0 : options.display.transition_time)
+                   .attr('opacity', function() { return options.display.game_boundaries ? .02 : 0 })
+                   .attr("transform", function(d, i) { return "translate(" + xScale(d.range[0]) + ", 0)"; })
+                   .attr("height", yScale(-2))
+                   .attr('width', function(d) { return xScale(d.range[1] + 1) - xScale(d.range[0]); })
+                   .attr('stroke', function(d) { return options.colors.players[d.winner]; })
+                   .attr('stroke-width', 1)
+                   .attr('fill', function(d) { return options.colors.players[d.winner]; })
+
+                // Player PTS Lines
+                var lineGen = d3.svg.line()
+                   .x(function(d, i) { return xScale(i); })
+                   .y(function(d) { return yScale(games4set - d.pts); })
+
+                var pts_lines = pts.selectAll("." + options.class + "Line")
+                   .data([0, 1])
+
+                pts_lines.enter()
+                   .append('path')
+                   .attr('class', options.class + 'Line')
+                   .attr('id', function(d) { return options.class + options.id + 'player' + d + 'Line'; })
+                   .attr('fill', 'none')
+
+                pts_lines.exit()
+                   .remove()
+
+                pts_lines
+                   .transition().duration(resize ? 0 : options.display.transition_time / 2)
+                   .style('opacity', .1)
+                   .transition().duration(resize ? 0 : options.display.transition_time / 2)
+                   .style('opacity', 1)
+                   .attr('stroke', function(d) { return options.colors.players[d]; })
+                   .attr('stroke-width', function(d) { return options.lines.width; })
+                   .attr('d', function(d) { return lineGen(player_data[d]) })
+
+                var bp_wrappers = pts.selectAll('.' + options.class + 'BPWrapper')
+                   .data(player_data) 
+
+                bp_wrappers.enter()
+                   .append('g')
+                   .attr('class', options.class + 'BPWrapper');
+
+                /*
+                bp_wrappers.exit()
+
+                bp_wrappers
+                */
+
+                var breakpoints = bp_wrappers.selectAll('.' + options.class + 'Breakpoint')
+                   .data(function(d, i) { return add_index(d, i); })
+
+                breakpoints.enter()
+                   .append('circle')
+                   .attr('class', options.class + 'Breakpoint')
+                   .attr('opacity', '0')
+
+                breakpoints.exit()
+                   .attr('opacity', '0')
+                   .remove()
+
+                breakpoints
+                   .transition().duration(resize ? 0 : options.display.transition_time / 2)
+                   .style('opacity', 0)
+                   .transition().duration(resize ? 0 : options.display.transition_time / 2)
+                   .attr('fill', function(d, i) { 
+                      if (points[i - 1] && points[i - 1].breakpoint != undefined) {
+                         return options.colors.players[d._i]; 
+                      } else if (points[i - 1] && points[i - 1].gamepoint != undefined) {
+                         return options.colors.gamepoints;
+                      }
+                   })
+                   .style('opacity', function(d, i) { 
+                      if (points[i - 1]) {
+                         if (points[i - 1].breakpoint != undefined) {
+                            return points[i - 1].breakpoint == d._i ? 1 : 0
+                         } else if (points[i - 1].gamepoint != undefined && options.display.gamepoints) {
+                            return points[i - 1].gamepoint == d._i ? 1 : 0
+                         }
+                      }
+                   })
+                   .attr("cx", function(d, i) { return xScale(i); })
+                   // .attr("cy", function(d) { return yScale(((set_options.set.games / 2) * 4) - d.pts); })
+                   .attr("cy", function(d) { return yScale(games4set - d.pts); })
+                   .attr("r", 2)
+
+
+                var points_index = d3.range(points.length);
+                var barsX = d3.scale.ordinal()
+                   .domain(points_index)
+                   .rangeBands([0, xScale(points.length)], 0, 0)
+
+                var bX = d3.scale.linear()
+                   .domain([0, points.length])
+                   .range([0, xScale(points.length)])
+
+
+                // gradients cause hover errors when data is replaced
+                pts.selectAll('.gradient' + options.id).remove();
+
+                var gradients = pts.selectAll('.gradient' + options.id)
+                     .data(d3.range(points.length)) // data not important, only length of array
+
+                gradients.enter()
+                     .append('linearGradient')
+                     .attr("id", function(d, i) { return 'gradient' + options.id + i; })
+                     .attr("class", function() { return "gradient" + options.id })
+                     .attr("gradientUnits", "userSpaceOnUse")
+                     .attr("x1", function(d) { return barsX.rangeBand() / 2; })
+                     .attr("y1", function(d) { return 0 })
+                     .attr("x2", function(d) { return barsX.rangeBand() / 2; })
+                     .attr("y2", function(d) { return yScale(-2) })
+
+                gradients.exit()
+                     .remove();
+
+                gradients
+                     .attr("transform", function(d, i) { return "translate(" + bX(i) + ", 0)"; })
+   
+                var point_stops = gradients.selectAll(".points_stop")
+                     .data(function(d, i) { return calcStops(points[d], i); })
+    
+                point_stops.enter()
+                     .append("stop")
+                     .attr("class", "points_stop")
+                     .attr("offset", function(d) { return d.offset; })
+                     .attr("stop-color", function(d) { return d.color; });
+                
+                point_stops.exit()
+                     .remove();
+
+                point_stops
+                     .attr("offset", function(d) { return d.offset; })
+
+                var point_bars = ptsHover.selectAll("." + options.class + "Bar")
+                   .data(d3.range(points.length)) // data not important, only length of array
+
+                point_bars.enter()
+                   .append("line")
+                   .attr("class", options.class + "Bar")
+                   .attr('opacity', '0')
+
+                point_bars.exit()
+                   .transition().duration(resize ? 0 : options.display.transition_time)
+                   .attr('opacity', '0')
+                   .remove()
+
+                point_bars
+                   .attr('opacity', '0')
+                   .attr("transform", function(d, i) { return "translate(" + bX(i) + ", 0)"; })
+                   .attr("x1", function(d) { return barsX.rangeBand() / 2; })
+                   .attr("y1", function(d) { return 0 })
+                   .attr("x2", function(d) { return barsX.rangeBand() / 2; })
+                   .attr("y2", function(d) { return yScale(-2) })
+                   .attr("stroke-width", function() { return barsX.rangeBand(); })
+                   .attr("stroke", function(d, i) { return 'url(#gradient' + options.id + i + ')' })
+                   .attr("uid", function(d, i) { return 'point' + i; })
+                   .on("mousemove", function(d, i) { 
+                      if (options.display.point_highlighting) { d3.select(this).attr("opacity", options.display.point_opacity); }
+                      if (options.display.game_highlighting && points[i]) {
+                         d3.select('[id="' + options.class + options.id + 'game' + points[i].game + '"]').attr("opacity", options.display.game_opacity);
+                      }
+                      if (events.point_bars.mouseover) { events.point_bars.mouseover(points[d], i); };
+                      if (d==0) {
+                         ptsHover.selectAll('.' + options.class + 'Bar').attr("opacity", options.display.point_opacity);
+                      }
+                      highlightScore(d, i);
+                   })
+                   .on("mouseout", function(d, i) { 
+                      ptsHover.selectAll('.' + options.class + 'Bar').attr("opacity", 0);
+                      pts.selectAll('.' + options.class + 'Game').attr("opacity", "0");
+                      if (events.point_bars.mouseout) { events.point_bars.mouseout(points[d], i); }; 
+                      displayScore();
+                   })
+                   .on("click", function(d, i) {
+                      if (events.point_bars.click) { events.point_bars.click(points[d], i, this); }; 
+                   })
+
+               function displayScore(resize) {
+                  var legend = '';
+                  var scoreboard = set_data.score();
+                  if (scoreboard && scoreboard.legend) { legend = scoreboard.legend; }
+
+                  set_winner
+                    .transition().duration(resize ? 0 : options.display.transition_time)
+                    .attr('opacity', 1)
+                    .attr('fill', options.colors.players[scoreboard ? scoreboard.leader : ''])
+                    .text(legend);
+
+                  if (player_data[0].length && (lastElement(player_data[0]).pts == 0 || lastElement(player_data[1]).pts == 0)) {
+
+                     // var game = points[points.length - 1].game;
+                     var winner = points[points.length - 1].winner;
+
+                     var game_score = scoreboard.game_score;
+                     if (winner) {
+                        // reverse set score if winner == 1
+                        var score_split = game_score.split(' ');
+                        var tbscore = score_split[0].split('(');
+                        if (tbscore) {
+                           game_score = tbscore[0].split('-').reverse().join('-');
+                        } else {
+                           game_score = score_split[0].split('-').reverse().join('-');
+                        }
+                        if (tbscore[1]) game_score += '(' + tbscore[1];
+                        if (score_split[1]) game_score += score_split[1];
+                     }
+
+                     set_score
+                       .transition().duration(resize ? 0 : options.display.transition_time)
+                       .attr('opacity', 1)
+                       .attr('fill', options.colors.players[winner])
+                       .text(game_score);
+
+                     set_points
+                       .transition().duration(resize ? 0 : options.display.transition_time)
+                       .attr('opacity', 0)
+
+                  } else {
+                     if (points.length) {
+                        highlightScore(points.length - 1);
+                     } else {
+                        set_winner
+                          .transition().duration(resize ? 0 : options.display.transition_time)
+                          .attr('opacity', 0)
+
+                        set_score
+                          .transition().duration(resize ? 0 : options.display.transition_time)
+                          .attr('opacity', 0)
+
+                        set_points
+                          .transition().duration(resize ? 0 : options.display.transition_time)
+                          .attr('opacity', 0)
+                     }
+                  }
+               }
+
+               function highlightScore(d) {
+                  if (!points[d]) return;
+                  var scoreboard = set_data.score(d);
+                  var point_score = scoreboard.point_score;
+                  if (options.score.reverse && points[d].server) point_score = point_score.split('-').reverse().join('-');
+
+                  // check for hover over end of set
+                  if (player_data[0][d + 1] && (player_data[0][d + 1].pts == 0 || player_data[1][d + 1].pts == 0)) {
+                     pts.selectAll('.' + options.class + 'Game').attr("opacity", options.display.game_opacity);
+                  }
+
+                  set_winner
+                    .transition().duration(100) // necessary
+                    .attr('opacity', 1)
+                    .attr('fill', function() { return scoreboard.leader != undefined ? options.colors.players[scoreboard.leader] : 'black'; })
+                    .text(scoreboard.legend);
+
+                  set_score
+                    .transition().duration(100) // necessary
+                    .attr('opacity', 1)
+                    .attr('fill', function() { return scoreboard.leader != undefined ? options.colors.players[scoreboard.leader] : 'black'; })
+                    .text(scoreboard.game_score);
+
+                  set_points
+                    .transition().duration(100) // necessary
+                    .attr('opacity', 1)
+                    .attr('fill', function() { return scoreboard.leader != undefined ? options.colors.players[scoreboard.leader] : 'black'; })
+                    .text(point_score);
+               }
+
+               function calcStops(point, i) {
+                  var win_pct = 0;
+                  var err_pct = 0;
+                  var u_pct = 0;
+
+                  if (options.display.win_err_highlight) {
+                     var rally = point.rally;
+                     var result = point.result;
+                     var rally_pct = rally ? 100 - Math.floor(rally.length / longest_rally * 100) : 100;
+                     if (winners.indexOf(result) >= 0) {
+                        win_pct = rally_pct;
+                     } else if (errors.indexOf(result) >= 0) {
+                        err_pct = rally_pct;
+                     } else {
+                        u_pct = rally_pct;
+                     }
+                  }
+
+                  return [ {offset: "0%", color: 'blue' }, 
+                           {offset: u_pct + "%", color: 'blue' }, 
+                           {offset: u_pct + "%", color: 'green' }, 
+                           {offset: u_pct + win_pct + "%", color: 'green' }, 
+                           {offset: u_pct + win_pct + "%", color: 'red' }, 
+                           {offset: u_pct + win_pct + err_pct + "%", color: 'red' }, 
+                           {offset: u_pct + win_pct + err_pct + "%", color: options.colors.orientation }, 
+                           {offset: "100%", color: options.colors.orientation } ] 
+               }
+
+            }
+        });
+    }
+
+    // REUSABLE functions
+    // ------------------
+
+    function add_index(d, i) {
+       for (var v=0; v<d.length; v++) { d[v]['_i'] = i; }
+       return d;
+    }
+
+    function boxWidth() {
+       var dl = set_data.points().length - 1;
+       var player_data = set_data.player_data();
+       var pw = dl < options.set.average_points ? options.set.average_points : player_data[0].length - 1;
+       if (player_data[0].length && (lastElement(player_data[0]).pts == 0 || lastElement(player_data[1]).pts == 0)) pw = dl;
+       return pw;
+    }
+
+    function calcWidth() {
+       var dl = set_data.points().length - 1;
+       var mw = Math.max(dl, options.points.max_width_points, options.set.average_points);
+       return mw;
+    }
+
+    // ACCESSORS
+
+    // allows updating individual options and suboptions
+    // while preserving state of other options
+    chart.options = function(values) {
+        if (!arguments.length) return options;
+        var vKeys = Object.keys(values);
+        var oKeys = Object.keys(options);
+        for (var k=0; k < vKeys.length; k++) {
+           if (oKeys.indexOf(vKeys[k]) >= 0) {
+              if (typeof(options[vKeys[k]]) == 'object') {
+                 var sKeys = Object.keys(values[vKeys[k]]);
+                 var osKeys = Object.keys(options[vKeys[k]]);
+                 for (var sk=0; sk < sKeys.length; sk++) {
+                    if (osKeys.indexOf(sKeys[sk]) >= 0) {
+                       options[vKeys[k]][sKeys[sk]] = values[vKeys[k]][sKeys[sk]];
+                    }
+                 }
+              } else {
+                 options[vKeys[k]] = values[vKeys[k]];
+              }
+           }
+        }
+        return chart;
+    }
+
+    chart.data = function(set_object) {
+      if (!arguments.length) return set_data;
+      set_data = set_object;
+    }
+
+   chart.events = function(functions) {
+        if (!arguments.length) return events;
+        var fKeys = Object.keys(functions);
+        var eKeys = Object.keys(events);
+        for (var k=0; k < fKeys.length; k++) {
+           if (eKeys.indexOf(fKeys[k]) >= 0) events[fKeys[k]] = functions[fKeys[k]];
+        }
+        return chart;
+   }
+
+    chart.colors = function(colores) {
+        if (!arguments.length) return options.colors;
+        options.colors.players = colores;
+        return chart;
+    }
+
+    chart.width = function(value) {
+        if (!arguments.length) return options.width;
+        options.width = value;
+        // scaleChart();
+        return chart;
+    };
+
+    chart.height = function(value) {
+        if (!arguments.length) return options.height;
+        options.height = value;
+        // scaleChart();
+        return chart;
+    };
+
+    chart.update = function(resize) {
+       if (events.update.begin) events.update.begin(); 
+       if (typeof update === 'function') update(resize);
+        setTimeout(function() { 
+          if (events.update.end) events.update.end(); 
+        }, options.display.transition_time);
+       return true;
+    }
+
+    chart.duration = function(value) {
+        if (!arguments.length) return options.display.transition_time;
+       options.display.transition_time = value;
+       return chart;
+    }
+
+    function lastElement(arr) { return arr[arr.length - 1]; }
+
+    // RESIZING
+    // ---------
+
+    window.addEventListener( 'resize', scaleChart, false );
+
+    function scaleChart() {
+       if (!options.display.responsive) return;
+       /*
+       var height_offset = dom_parent.node().getBoundingClientRect().top;
+       var height = Math.min(options.heightMax, document.documentElement.clientHeight - height_offset);
+       if (height < options.margins.top + options.margins.bottom) { height = options.margins.top + options.margins.bottom; }
+       options.height = height;
+
+       var width_offset = dom_parent.node().getBoundingClientRect().left;
+       var width = Math.min(options.widthMax, document.documentElement.clientWidth - width_offset);
+       if (width < options.margins.left + options.margins.right) { width = options.margins.left + options.margins.right; }
+       options.width = width;
+       */
+       chart.update();
+    }
+
+    return chart;
+}

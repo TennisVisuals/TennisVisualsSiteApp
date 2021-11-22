@@ -1,0 +1,34 @@
+
+Y. new function genHorizon() to take extract from updateCharts() such that a horizon object can be created by clickLine() and displayed.
+o     --> also an opportunity to figure out how to put a link for the opponent's bio/overview page (probably a small pop up selector window).
+
+Y. function to generate group of checkboxes each in a flex div to be injected into a modal... hmmm... how to generate dynamically within current structure?
+
+3. ScatterPlot can be an optional chart generated below the Parallel Coordinates chart (icon to launch).  Can also be used to drill down to specific matches or to select matches to view in Parallel Coordinates...
+
+Y. Show Axes Averages below each Axis in the PC Chart...
+o     --> Click on Averages to generate a chart showing brushed items on a timeseries chart
+o        --> Won't work for tournaments where all matches have the same date... so they will have to be sorted by ROUND
+
+5. Click on the legend for each PC Axis 
+    --> Clicking on the legend for an axis allows manual setting of brush boundaries
+            --> which means setting the brush extent and manually changing the rect style/attributes
+
+6. Clicking on the Surface % divs below the PC Chart should create a table of the matches that match the criteria...
+   or, rather, generates a list of all the current constraints (brush extents)... 
+
+7. Think about clicking on tournament name to generate a Sunburst Draw, or showing a Sunburst Draw by default next to the match opponents/scores and putting the horizon charts below...
+
+         <div>Sunburst Draw</div><div>Opponents/Scores</div>
+         <div          Horizon Charts                 </div>
+
+8. Hovering over the divs for surface filtering can have a + icon show up on the far right to add additional rows 
+      -> including stats for tiebreak outcomes.
+      -> including stats for tournament types (rank) and tours
+      -> also entry boxes for tournament NAME filter and Oppoenent filter
+
+9. Maintenance function to identify holes in tournament matches (tournaments missing matches for progression to final round for a player)...
+
+10. Change the color of the headings for a PC Axis that has been filtered, to make them easier to spot...
+
+

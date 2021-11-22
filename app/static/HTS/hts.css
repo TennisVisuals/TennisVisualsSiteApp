@@ -1,0 +1,64 @@
+
+#croatia { padding: 10px; display: none; }
+path { stroke: #fff; fill-rule: evenodd; }
+#seasonchart { position: relative; width: 95% }
+
+.subunit { fill: #777; }
+.country { stroke: #fff; fill: none; }
+
+.table { border: 1px solid #ccc; }
+.table td { text-align: center;   }
+.table th { text-align: center;   }
+
+.dropdown-menu { width: 300px !important; }
+
+svg{ overflow:hidden; }
+
+.dropdown {
+   border: 0 !important;  /*Removes border*/
+   -webkit-appearance: none;  /*Removes default chrome and safari style*/
+   -moz-appearance: none; /* Removes Default Firefox style*/
+   width: 100%;
+   line-height: 24px;
+   padding: 5px 15px 5px 15px;
+   box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+   -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+ }
+.sb-text {font-size:16px;}
+
+.twitter-typeahead{ width:100%}
+.typeahead,
+.tt-hint {
+  min-width: 200px;
+  height: 30px;
+  padding: 6px 8px;
+  line-height: 14px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+}
+
+.typeahead { background-color: #fff; }
+.typeahead:focus { border: 2px solid #0097cf; }
+.tt-hint { color: #999 }
+
+.tt-menu {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  text-align: left;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+

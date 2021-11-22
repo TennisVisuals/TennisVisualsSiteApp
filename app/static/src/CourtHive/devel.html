@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CourtHive</title>
+   <meta itemprop="name" content="TennisVisuals">
+   <meta itemprop="description" content="TennisVisuals hosts a number of interactive data visualizations related to Tennis. The visualizations are all rendered using D3.">
+
+   <link rel="stylesheet" type="text/css" href="../css/y.css" />
+   <link rel="stylesheet" type="text/css" href="../css/modal.css" >
+   <link rel="stylesheet" type="text/css" href="../css/awesomplete.css" />
+   <link rel="stylesheet" type="text/css" href="../html/mcpSS.css" />
+   <link rel="stylesheet" type="text/css" href="../rough/umoEntry.css" >
+   <link rel="stylesheet" type="text/css" href="../html/metadata.css" >
+
+</head>
+<body id="body">
+   <div id="myModal" class="modal" style="display: none">
+     <div class="modal-content">
+        <button id="closeModal">x</button>
+        <p id="modalText"></p>
+     </div>
+   </div>
+   <div id="textWidth" style="position:absolute;visibility:hidden"></div>
+
+   <div id="navmenu" class="navmenu">
+       <div class="nav">
+          <ul id="menu-primary" class="">
+             <li class="">
+                <div id="panel" style="display: none">
+                   <h3>
+                   <img src="/images/ul.png" class="modalInfo" height="25" alt="upload" info="upload">
+                   <img src="/images/help.png" height="30" alt="faq" class="modalInfo" info="faq">
+                   </h3>
+                </div>
+            </li>
+            <li>
+               <div id="prompt">
+                  <h3>
+                     <table><tr><td>
+                           <input type="image" src="/splash/Search Icon.png" onclick="interact.launchSearch()" height="40">
+                        </td>
+                        <td class="launchSearch">Begin with a Player Search. </td>
+                     </tr></table>
+                  </h3>
+              </div>
+            </li>
+         </ul>	
+         <ul class="" id="resultMenu"> </ul>
+         <div class="whitespace"> </div>
+      </div>
+   </div>
+
+   <div id="header">
+      <div class="flex-header">
+        <a id="menulink" class="hover" href="#"> <span>
+          <!--
+           <div id="menu" class="flex-header-icon menubar">
+                <img class="icon-responsive" src="/splash/menu.png" alt="Menu">
+           </div>
+           -->
+        </span> </a>
+        <div class="flex-logo">
+             <a href="/" title="TennisVisuals">
+                  <img class="icon-responsive" src="/splash/tvb.png" alt="TennisVisuals">
+             </a>
+        </div>
+
+        <a id="searchlink" class="hover" href="#"> <span>
+        <div id="searchIcon" class="flex-header-icon searchicon">
+           <!--  <img class="icon-responsive" src="/splash/Search Icon.png" alt="Search"> -->
+        </div>
+        </span> </a>
+
+     </div>
+
+    </div>
+
+   <div id="mcpEntry">
+
+      <div class="flex-nowrap-parent">
+         <div class="left-column">
+            <div id='navigation' class='nav-parent'>
+               <div id="editinfo" class='nav-row'>
+                  <img src="/images/meta.png" height="30" onclick="charting.editInfo()" title="Match Info" alt="Match Info">
+               </div>
+
+               <div class='nav-row'><p></div>
+               <div id="upload" style="display: inline" class='nav-row'>
+                  <img src="/images/ul.png" class="modalInfo" height="25" alt="upload" info="upload">
+                  <input type="file" id="upload_file" style="display: none;" />
+               </div>
+               <div id="download" style="display: none" class='nav-row'>
+                  <img src="/images/dl.png" width="30" onclick="saveMCP.downloadMatch(charting)" title="download" alt="download">
+               </div>
+               <div class='nav-row'><p></div>
+
+               <div id="reset" class='nav-row'>
+                  <img src="/images/reset.png" height="30" onclick="charting.reset()" title="reset" alt="reset">
+               </div>
+               <div class='nav-row'><p></div>
+
+               <div id="chartselector" class='nav-row'>
+                  <img src="/images/bar_chart.png" height="30" onclick="charting.toggleCharts()" title="charts" alt="charts">
+               </div>
+               <div id="charticon" style="display: none" class='nav-row'>
+                  <img src="/images/bar_chart.png" height="30" onclick="charting.toggleHelp()" title="charts" alt="charts">
+               </div>
+               <div id="helpicon" class='nav-row'>
+                  <img src="/images/help.png" height="30" onclick="charting.toggleHelp()" title="help" alt="help">
+               </div>
+            </div>
+         </div>
+
+         <div class="right-column">
+            <div class="CH-header-parent CH-body">
+               <div id="CHmatchOverview" class="CH-header-child"></div>
+               <div id="pointDescription" class="CH-header-pdesc"> </div>
+            </div>
+            <div class="flex-wrap-parent CH-body">
+               <div class="left-column">
+
+                  <div id="spreadsheet">
+                     <table id="mcpTable" class="scroll">
+                        <thead id="mcpHeader"></thead>
+                        <tbody id="mcpPoints"></tbody>
+                     </table>
+                  </div>
+
+                  <div id="help" class="CH-flex-child"></div>
+
+                  <div class="flex-wrap-parent CH-chart-home">
+                        <div id="CHinstructions" class="CH-flex-child"></div>
+                        <div id="CHgametree" class="CH-flex-child"></div>
+                        <div id="CHrallytree" class="CH-flex-child"></div>
+                        <div id="CHmomentum" class="CH-flex-child"></div>
+                        <div id="CHpts" class="CH-flex-child"></div>
+                        <div id="CHhorizon" class="CH-flex-child"></div>
+                        <div id="CHbasestats" class="CH-flex-child"></div>
+                        <div id="CHservestats" class="CH-flex-child"></div>
+                  </div>
+               </div>
+
+               <div class="flex-statPanel" id="CHstatPanel"></div>
+
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+
+   <script src="/lib/ex/px_bundle.js"></script>
+   <script src="/cors/aip-cors.js" type="text/javascript" ></script>
+
+   <script src="../viz/overview.js" charset="utf-8"></script>
+   <script src="../viz/statView.js" charset="utf-8"></script>
+   <script src="../viz/ptsChart.js" charset="utf-8"></script>
+   <script src="../viz/gameFish.js" charset="utf-8"></script>
+   <script src="../viz/GameTree.js" charset="utf-8"></script>
+   <script src="../viz/RallyTree.js" charset="utf-8"></script>
+   <script src="../viz/radarChart.js" charset="utf-8"></script>
+   <script src="../viz/horizonChart.js" charset="utf-8"></script>
+   <script src="../viz/ptsHorizon.js" charset="utf-8"></script>
+
+   <script src="../core/matchObject.js" charset="utf-8"></script>
+   <script src="../core/mcpSequence.js" charset="utf-8"></script>
+   <script src="../core/statistics.js" charset="utf-8"></script>
+ 
+   <script src="../io/parsers.js" charset="utf-8"></script>
+   <script src="../io/sources.js" charset="utf-8"></script>
+   <script src="../io/readWrite.js" charset="utf-8"></script>
+   <script src="../io/saveMCP.js"></script>
+
+   <script src="../rough/umoEntry.js"></script>
+
+   <script src="../rough/search.js" charset="utf-8"></script>
+
+   <script src="../rough/scripts.js" charset="utf-8"></script>
+
+   <script src="../html/metadata.js"></script>
+   <script src="../html/help.js"></script>
+   <script src="../html/mcpSS.js"></script>
+
+   <script>charting.init()</script>
+   <script src="/lib/ex/xlsx.core.min.js" async></script>
+   <script src="/lib/ex/sql.js" charset="utf-8" async></script>
+</body>
+</html>

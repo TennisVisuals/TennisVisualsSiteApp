@@ -1,0 +1,336 @@
+#players { position: absolute; left: 50px; top: 10px; width: 600px; padding: 10px; display: inline }
+#playerone { float: left }
+#playertwo { float: left }
+#p1div { position: absolute; left: 10px; }
+#p2div { position: absolute; left: 255px; }
+#versus { position: absolute; left: 225px; top: 20px; }
+
+#entry { position: absolute; left: 50px; top: 60px; width: 600px; padding: 10px; display: inline; }
+#service { position: relative; top: 0px; float: left; }
+#firstServe { position: absolute; left: 350px; top: 18px; }
+
+#meta { position: absolute; left: 50px; top: 50px; width: 600px; padding: 10px; display: none; }
+#p1hand_label { position: absolute; left: 10px; top: 20px; }
+#p2hand_label { position: absolute; left: 350px; top: 20px; }
+#gender_label { position: absolute; left: 180px; top: 20px; }
+#tournament { position: absolute; left: 10px; top: 60px; }
+#round_label { position: absolute; left: 325px; top: 60px; }
+#bestof_label { position: absolute; left: 10px; top: 100px; }
+#finalsettb_label { position: absolute; left: 130px; top: 100px; }
+#surface_label { position: absolute; left: 320px; top: 100px; }
+#court_label { position: absolute; left: 10px; top: 140px; }
+#umpire_label { position: absolute; left: 230px; top: 140px; }
+#date_label { position: absolute; left: 10px; top: 190px; }
+#chartedby_label { position: absolute; left: 200px; top: 190px; }
+#xlsx_label { position: absolute; left: 290px; top: 230px; }
+#xlsx_support { position: absolute; left: 270px; top: 230px; }
+
+#vizviewz { position: absolute; top: 0px; left: 650px; }
+#gametree { position: relative; top: 40px; }
+#momentum { position: relative; top: 40px; }
+#rallyTree { position: relative; top: 40px; }
+#matchRadar { position: relative; top: 40px; }
+#totals { position: relative; top: 40px; left: 80px; }
+
+#vizcontrol { position: absolute; top: 0px; left: 60px; width: 600px; }
+#totals_viz { position: relative; left: 0px; top: 0px; }
+#t_label { position: relative; left: 0px; top: 0px; }
+#radar_viz { position: relative; left: 10px; top: 0px; }
+#rv_label { position: relative; left: 10px; top: 0px; }
+#game_viz { position: relative; left: 20px; top: 0px; }
+#gv_label { position: relative; left: 20px; top: 0px; }
+#rally_viz { position: relative; left: 30px; top: 00px; }
+#yv_label { position: relative; left: 30px; top: 0px; }
+#fish_viz { position: relative; left: 40px; top: 0px; }
+#mc_label { position: relative; left: 40px; top: 0px; }
+#court_viz { position: relative; left: 50px; top: 0px; }
+#c_label { position: relative; left: 50px; top: 0px; }
+
+.selection { 
+   width: 50px; height: 25px; padding: 6px 8px; font-size: 12px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.tournament { 
+   width: 280px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.court { 
+   width: 140px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.umpire { 
+   width: 140px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.round { 
+   width: 70px; height: 25px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.validdate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.invaliddate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #FDD;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.incompletedate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #FFFF00;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.charter { 
+   width: 150px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+
+
+#editinfo { position: absolute; left: 15px; top: 20px; }
+#undo { position: absolute; left: 15px; top: 70px; }
+#download { position: absolute; left: 15px; top: 120px; }
+#upload { position: absolute; left: 15px; top: 125px; }
+#helpicon { position: absolute; left: 15px; top: 175px; }
+#charticon { position: absolute; left: 15px; top: 175px; }
+#reset { position: absolute; left: 15px; top: 225px; }
+#broadcast { position: absolute; left: 15px; top: 275px; }
+
+#desc { position: relative; left: 10px; top: 10px; }
+#documentation { position: relative; top: 20px; width: 600px; }
+
+#help { position: relative; top: 110px; left: 60px; width: 600px; }
+
+#p1ace { position: absolute; width: 45px; left: 60px; top: 70px; display: none }
+#p1dbl { position: absolute; width: 45px; left: 110px; top: 70px; display: none }
+#p1winner { position: absolute; width: 45px; left: 160px; top: 70px; display: none }
+#p1err { position: absolute; width: 45px; left: 210px; top: 70px; display: none }
+
+#rally { position: absolute; width: 20px; height: 14px; left: 260px; top: 70px; display: none }
+
+#p2err { position: absolute; width: 45px; left: 305px; top: 70px; display: none }
+#p2winner { position: absolute; width: 45px; left: 355px; top: 70px; display: none }
+#p2dbl { position: absolute; width: 45px; left: 410px; top: 70px; display: none }
+#p2ace { position: absolute; width: 45px; left: 460px; top: 70px; display: none }
+
+#content { position: relative; top: 110px; left: 60px; width: 600px; }
+#ptsMatch { position: relative; top: 30px; left: 0px; width: 600px; }
+#history { position: relative; top: 40px; left: 0px; width: 580px; }
+.history { width: 97% }
+
+.playerone { 
+   width: 180px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.spacer { 
+   height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.playertwo { 
+   width: 180px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+
+.valid { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.valid:focus { border: 2px solid #0097cf; }
+.invalid { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; 
+   border-color: #900; background-color: #FDD;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.invalid:focus { border: 2px solid #900; }
+
+.incomplete { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; background-color: #FFFF00;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.incomplete:focus { border: 2px solid #736F6E; }
+
+.button { 
+  height: 30px; padding: 6px 8px; font-size: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+
+.point { 
+  height: 30px; padding: 6px 8px; font-size: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+
+.modeselector {
+    position: absolute; width: 80px; left: 530px; top: 20px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.modeselector-checkbox {
+    display: none;
+}
+.modeselector-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.modeselector-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.modeselector-inner:before, .modeselector-inner:after {
+    display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 25px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.modeselector-inner:before {
+    content: "MCP";
+    padding-left: 10px;
+    background-color: #3C35C4; color: #FFFFFF;
+}
+.modeselector-inner:after {
+    content: "PP";
+    padding-right: 10px;
+    background-color: #8934C2; color: #FFFFFF;
+    text-align: right;
+}
+.modeselector-switch {
+    display: block; width: 23px; margin: 3.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 46px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.modeselector-checkbox:checked + .modeselector-label .modeselector-inner {
+    margin-left: 0;
+}
+.modeselector-checkbox:checked + .modeselector-label .modeselector-switch {
+    right: 0px; 
+}
+
+/* This is the style of our error messages */
+.error {
+  width  : 100%;
+  padding: 0;
+ 
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+ 
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+.tab {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+.noselect img {
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none; 
+    opacity: 1;
+}
+
+tr td {
+   padding:0; margin:0;
+}
+
+table.fixed {
+   width: 400px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none; table-layout: fixed;
+}
+table.fixed td { 
+  height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; 
+  border: 1px solid #ccc; 
+ /* border-bottom:2px solid #ccc;*/
+  background-color: #fff;
+  text-align: center;
+}
+table.fixed tr { border: 1 }
+table.fixed tr td { border: 0 }
+table.fixed td:nth-of-type(1) { width:100px; }
+table.fixed td:nth-of-type(2) { width:120px; }
+table.fixed td:nth-of-type(3) { width:100px; }
+
+table.history td:nth-of-type(1) { width:40px; }
+table.history td:nth-of-type(2) { width:45px; }
+
+.typeahead,
+.tt-hint {
+  width: 200px;
+  height: 14px;
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 14px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 200px;
+  margin: 10px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  text-align: left;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+#tablewrapper {
+  position:relative;
+  overflow-x: hidden;
+}
+#tablescroll {
+  height:500px;
+  overflow:auto;  
+  margin-top:30px;
+}
+#tablewrapper table {
+  width:100%;
+
+}
+#tablewrapper table * {
+  background:yellow;
+  color:black;
+}
+#tablewrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}

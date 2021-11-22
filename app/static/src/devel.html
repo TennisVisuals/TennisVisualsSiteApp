@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TennisVisuals</title>
+  <meta itemprop="name" content="TennisVisuals">
+  <meta itemprop="description" content="TennisVisuals hosts a number of interactive data visualizations related to Tennis. The visualizations are all rendered using D3.">
+
+  <link rel="stylesheet" type="text/css" href="css/y.css" />
+  <link rel="stylesheet" type="text/css" href="css/modal.css" >
+  <link rel="stylesheet" type="text/css" href="css/awesomplete.css" />
+  <!--  <link rel="stylesheet" type="text/css" href="/lib/ex/d3.parcoords.css" /> -->
+  <link rel="stylesheet" type="text/css" href="html/mcpSS.css" />
+  <link rel="stylesheet" type="text/css" href="rough/umoEntry.css" >
+  <link rel="stylesheet" type="text/css" href="html/metadata.css" >
+
+</head>
+<body>
+
+   <div id="myModal" class="modal" style="display: none">
+     <div class="modal-content">
+        <button id="closeModal">X</button>
+        <p id="modalText" class="noselect"></p>
+     </div>
+   </div>
+
+   <div id="navmenu" class="navmenu">
+       <div class="nav">
+          <ul id="menu-primary" class="">
+             <li class="">
+                <div id="panel" style="display: none">
+                   <center>
+                      <h3>
+                         <img src="/images/ul.png" class="modalInfo" height="25" alt="upload" info="upload">
+                         <input type="file" id="upload_file" style="display: none;" />
+                         <img src="/images/help.png" height="30" alt="faq" class="modalInfo" info="faq">
+                      </h3>
+                   </center>
+                </div>
+            </li>
+            <li>
+               <div id="prompt">
+                  <h3>
+                     <table><tr><td>
+                           <input class="fully-loaded" type="image" src="/splash/Search Icon.png" onclick="interact.launchSearch()" height="40">
+                        </td>
+                        <td class="launchSearch fully-loaded">Begin with a Player Search. </td>
+                     </tr></table>
+                  </h3>
+              </div>
+            </li>
+         </ul>	
+         <ul class="" id="resultMenu"> </ul>
+         <ul class="" id="externalLinks">
+             <li class="">
+                <div id="handy" style="display: none">
+                   <h3>Articles</h3>
+                   <ul class="sub-menu">
+                     <li><a href="https://medium.com/the-tennis-notebook/pondering-point-patterns-3e63869e25e6">Pondering Point Patterns</a></li>
+                     <li><a href="https://medium.com/@TennisVisuals/courthive-d0caca7c2899">CourtHive</a></li>
+                     <li><a href="https://medium.com/the-tennis-notebook/how-to-chart-a-match-cb52ab9f62e5">How To Chart A Match</a></li>
+                     <li><a href="https://medium.com/the-tennis-notebook/set-scores-stories-untold-d04fb14bff68">Set Scores: Stories Untold</a></li>
+                     <li><a href="https://medium.com/the-tennis-notebook/tennis-note-30-56bba1e73812">Set Scores: The Rally Reality</a></li>
+                   </ul>
+
+                   <h3>Social</h3>
+                   <ul class="sub-menu">
+                     <li><a href="https://twitter.com/TennisVisuals">Twitter</a></li>
+                     <li><a href="https://medium.com/@TennisVisuals">Medium</a></li>
+                     <li><a href="https://github.com/TennisVisuals">GitHub</a></li>
+                     <li><a href="https://www.facebook.com/TennisViz/">Facebook</a></li>
+                     <li><a href="http://tennisviz.blogspot.hr/">Blogspot</a></li>
+                     <li><a href="http://bl.ocks.org/TennisVisuals">Bl.ocks.org</a></li>
+                   </ul>
+                </div>
+            </li>
+         </ul>
+         <div class="whitespace"> </div>
+      </div>
+   </div>
+
+   <div id="searchbox" class="searchbox flex-parent">
+      <div class="flex-child">
+         <form id="updatePlayer" action="/player/" method="get" class="context" name="updatePlayer">
+            <input id="thePlayer" name="thePlayer" class="playersearch typeahead" type="text" value=""
+                   onfocus="this.setSelectionRange(0, this.value.length)"
+                   placeholder="Enter Player Name..." onClick="this.setSelectionRange(0, this.value.length)">
+         </form>
+      </div>
+   </div>
+
+
+   <div id="header">
+      <div class="flex-header">
+        <a id="menulink" class="hover" href="#"> <span>
+           <div id="menu" class="flex-header-icon menubar">
+                <img class="icon-responsive" src="/splash/menu.png" alt="Menu">
+           </div>
+        </span> </a>
+        <div class="flex-logo">
+             <a href="/" title="TennisVisuals">
+                  <img class="icon-responsive" src="/splash/tvb.png" alt="TennisVisuals">
+             </a>
+        </div>
+        <div class="flex-header-child social">
+            <a href="https://twitter.com/TennisVisuals"><img style="height: 30px" src="/splash/TwitterLogo_black.png"></a>
+            <a href="https://www.facebook.com/TennisViz/"><img style="height: 30px; width: 20px" src="/splash/facebook_icon.png"></a>
+            <a href="http://tennisviz.blogspot.hr/"><img style="height: 30px" src="/splash/BloggerLogo_black.png"></a>
+        </div>
+
+        <a id="searchlink" class="hover" href="#"> <span>
+        <div id="searchIcon" class="flex-header-icon searchicon">
+             <img class="icon-responsive fully-loaded" src="/splash/Search Icon.png" alt="Search">
+        </div>
+        </span> </a>
+     </div>
+
+    </div>
+
+   <section>
+     <div id="splashSection">
+     <div class="splashWelcome">
+
+        <div id="carousel" class="carousel active">
+
+          <ol class="content">
+             <li>
+               <h1>Tennis Data. Visualized.</h1>
+               <p> Tennis Matches generate heaps of data.  Tennis Visuals enable rapid assessment of key match statistics.  </p>
+               <button class="btn search-player fully-loaded" onClick="search.toggleSearch()"> Player Search </button>
+             </li>
+
+             <li>
+               <h1>Tennis Data. Interactive.</h1>
+               <p> "Live" visualizations allow you to "drill down" with innovative data filtering, slicing and dicing.  </p>
+               <button class="btn search-player fully-loaded" onClick="search.toggleSearch()"> Player Search </button>
+            </li>
+
+            <li>
+               <h1>Tennis Data. Real Time.</h1>
+               <p> Generate you own match data, or upload from popular tracking applications...  </p>
+               <button class="btn start-tracking" onClick="interact.showModal('tracking')"> Start Tracking </button>
+            </li>
+          </ol>
+
+        </div> <!-- END slides -->
+
+    </div> <!-- END splash -->
+
+    <div class="wrap">
+      <h1>Gallery</h1>
+      <p>TennisVisuals presents Interactive visualizations of data related to tennis matches. Browse the visualizations you will encounter when you search for a player.  Click on an image for an overview of the visualization's purpose and functionality.  </p>
+
+      <div class="flex-parent">
+
+        <div class="flex-max modalInfo" id="clickLC" info="ladderChart">
+          <h2> Ladder Chart </h2>
+            <p class='synopsis'>Provides an Interactive View of Career Tournament Outcomes </p>
+            <img src="/splash/ladderChart.jpg" alt="Points To Set" class="img-responsive">
+         </div>
+
+        <div class="flex-max modalInfo" info="pCoords">
+          <h2> Parallel Coordinates </h2>
+          <p class="synopsis">Enables Exploration of Player Statistics across Numerous Matches </p>
+          <img src="/splash/pCoords.jpg" alt="Parallel Coordinates" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" id="clickPTS" info="PTS">
+          <h2> Points2Set </h2>
+            <p class='synopsis'> Visual summarization of the dynamics of a match </p>
+            <img src="/splash/pts.jpg" alt="Points To Set" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="matchRadar">
+          <h2> Match Radar </h2>
+          <p class='synopsis'>Compact visual comparisons of key match statistics </p>
+          <img src="/splash/MatchRadar.jpg" alt="MatchRadar Radar" class="img-responsive" style="top: 20px; left: 20px">
+        </div>
+
+        <div class="flex-child modalInfo" info="gameTree">
+          <h2> Game Tree </h2>
+          <p class="synopsis">Point pogressions for all games in a match </p>
+          <img src="/splash/GameTree.jpg" alt="Rally Tree" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="rallyTree">
+          <h2> Rally Tree </h2>
+          <p class="synopsis">Point distributions and % chance won by rally length </p>
+          <img src="/splash/RallyTree.jpg" alt="Rally Tree" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="coronaHorizon">
+          <h2> Corona </h2>
+          <p class="synopsis">Compact Match Overview </p>
+          <img src="/splash/Corona.jpg" alt="Corona Horizon" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="horizon">
+          <h2> Horizon </h2>
+          <p class="synopsis">Rapid match comparisons </p>
+          <img src="/splash/Horizon.jpg" alt="Horizon" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="gameFish">
+          <h2> Game Fish </h2>
+            <p class='synopsis'> Quick analysis of a single game </p>
+            <img src="/splash/GameFish.jpg" alt="Game Fish" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="momentum">
+          <h2> Momentum </h2>
+          <p class='synopsis'>Total points won, winners and errors </p>
+          <img src="/splash/Momentum.jpg" alt="Momentum" class="img-responsive" style="top: 20px; left: 20px">
+        </div>
+
+        <div class="flex-child modalInfo" info="sunburst">
+          <h2> Sunburst </h2>
+          <p class="synopsis">Compact Match Overview </p>
+          <img src="/splash/Sunburst.jpg" alt="Sunburst" class="img-responsive">
+        </div>
+
+        <div class="flex-child modalInfo" info="sankey">
+          <h2> Shot Explorer </h2>
+          <p class='synopsis'>Filter shots to drill down into court views </p>
+          <img src="/splash/Sankey.jpg" alt="Shot Explorer" class="img-responsive" style="top: 20px; left: 20px">
+        </div>
+
+      </div>
+
+      <div class="shadow">
+            <div class="flex-parent modalInfo" info="tracking">
+
+              <center><h2> Import Matches from Popular Trackers... </h2></center>
+              <div class="flex-max modalInfo" info="tracking">
+                  <img src="/splash/trackers.jpg" alt="Trackers" class="img-responsive">
+               </div>
+            </div>
+
+      </div>
+
+      <div class="buffer flex-parent">
+         <center><h2> <a href="/Scatter"> Interactive Scatterplots... </a> </h2></center>
+         <a href="/Scatter">
+            <img src="/splash/Scatter.jpg" alt="Set Distributions" class="img-responsive" style="top: 20px; left: 20px">
+         </a>
+      </div>
+
+      <div class="shadow">
+         <center><h2> <a href="/Tournaments"> Unique interactive views of tournament draws...  </a> </h2></center>
+         <div class="flex-parent">
+            <div class="flex-child">
+               <a href="/Tournaments">
+                  <img src="/splash/tournaments_ao.jpg" alt="Tournament Views" class="img-responsive">
+               </a>
+            </div>
+            <div class="flex-child">
+               <a href="/Tournaments">
+                  <img src="/splash/tournaments_fr.jpg" alt="Tournament Views" class="img-responsive">
+               </a>
+            </div>
+            <div class="flex-child">
+               <a href="/Tournaments">
+                  <img src="/splash/tournaments_en.jpg" alt="Tournament Views" class="img-responsive">
+               </a>
+            </div>
+         </div>
+      </div>
+
+  </div> <!-- end wrap -->
+  </div> <!-- end splashSection -->
+
+  <div id="matchesDisplay" class="matches" style="display: none">
+
+      <div id="summary">
+          <div class="flex-parent" id="radar" style="display: none">
+             <div class="flex-row" id="matchRadar"></div>
+          </div>
+
+          <div class="flex-parent playerOverview" id="playerOverview" class="bioBox" style="display: none">
+             <!--             <div class="flex-component" id="playerPhoto"><img src="/players/headshot.jpg" class="headshot img-responsive"></div> -->
+             <div class="flex-component" id="playerBio" class="bioPlayer">
+                <div class="bioLabel"></div><div class="bioValue"></div>
+             </div>
+          </div>
+
+          <div class="flex-parent" id="ladder">
+             <div class="flex-ladder-row" id="seasonChart"></div>
+             <div class="flex-ladder-row" id="datePicker"></div>
+          </div>
+
+          <div class="flex-filter-parent" id="surfaceFilters"></div>
+          <div class="flex-filter-parent" id="otherFilters"></div>
+
+          <div id="tournamentOverview">
+             <div class="flex-parent" id="tOverview">
+                <div class="flex-component"> <h2 id="tName"></h2> </div>
+                <div class="flex-component" id="tLocation"></div>
+             </div>
+          </div>
+
+          <div class="flex-parent" id="parallel">
+             <div class="flex-row parcoords" id="pCoords"></div>
+          </div>
+
+          <div class="flex-parent" id="filteredSurfaces"></div>
+
+          <div>
+             <div id="tournamentHorizons"></div>
+          </div>
+
+          <div id="tournamentEnd">
+             <div class="flex-parent">
+                <div class="flex-component"> <h2 id="matchDate"></h2> </div>
+             </div>
+          </div>
+       </div>
+
+       <div id="matchDisplay" class="flex-chart-group">
+          <div class='flex-left-column'>
+
+             <div class="flex-parent">
+                <div class='flex-row' id="matchOverview"></div>
+                <div class='flex-row' id="ptsHorizon"></div>
+
+                <div class="flex-row" id="trees">
+                   <div class='flex-parent'>
+                      <div class='flex-chart' id="gametree"></div>
+                      <div class='flex-chart' id="rallytree"></div>
+                   </div>
+                </div>
+                <div class="flex-row" id="pts"> </div>
+             </div>
+
+          </div>
+
+          <div class='flex-stats'>
+             <div class="flex-parent">
+                <div class="flex-row" id='statPanel'> </div>
+                <div class="flex-last-row" id='gamefish'> </div>
+             </div>
+          </div>
+       </div>
+
+       <div class="flex-parent" id="momentumChart">
+          <div class="flex-row" id="momentum"> </div>
+       </div>
+
+     </div> <!-- end wrap -->
+  </section>
+
+  <footer class="footer">
+      <div class="flex-parent">
+        <div class="flex-twin">
+          <h3>About</h3>
+          <p>
+          TennisVisuals is my playground.  
+          </p>
+          <p>
+          I am a tennis parent learning about tennis analytics, Javascript, <a href="http://d3js.org">D3js</a>, <a href="http://threejs.org/">three.js</a>, <a href="https://nodejs.org">Node</a> and <a href="https://www.mongodb.com/">Mongo</a>.
+          </p>
+        </div>
+        <div class="flex-child">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="https://medium.com/the-tennis-notebook/pondering-point-patterns-3e63869e25e6">Pondering Point Patterns</a></li>
+            <li><a href="https://medium.com/@TennisVisuals/courthive-d0caca7c2899">CourtHive</a></li>
+            <li><a href="https://medium.com/the-tennis-notebook/how-to-chart-a-match-cb52ab9f62e5">How To Chart A Match</a></li>
+            <li><a href="https://medium.com/the-tennis-notebook/set-scores-stories-untold-d04fb14bff68">Set Scores: Stories Untold</a></li>
+            <li><a href="https://medium.com/the-tennis-notebook/tennis-note-30-56bba1e73812">Set Scores: The Rally Reality</a></li>
+          </ul>
+        </div>
+        <div class="flex-child">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="https://twitter.com/TennisVisuals">Twitter</a></li>
+            <li><a href="https://medium.com/@TennisVisuals">Medium</a></li>
+            <li><a href="https://github.com/TennisVisuals">GitHub</a></li>
+            <li><a href="https://www.facebook.com/TennisViz/">Facebook</a></li>
+            <li><a href="http://tennisviz.blogspot.hr/">Blogspot</a></li>
+            <li><a href="http://bl.ocks.org/TennisVisuals">Bl.ocks.org</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer> <!-- End footer -->
+
+  <script>
+     var box = document.querySelector('.carousel');
+     if (box) {
+        var items = box.querySelectorAll('.content li');
+        var counter = 0;
+        var paused = false;
+        var amount = items.length;
+        var current = items[0];
+        box.classList.add('active');
+        function navigate(counter) {
+          current.classList.remove('current');
+          current = items[counter];
+          current.classList.add('current');
+        }
+        navigate(0);
+        function Carousel() {
+           if (paused) return;
+           if (counter + 1 < amount) {
+              counter += 1;
+           } else {
+              counter = 0;
+           }
+           navigate(counter);
+        }
+        setInterval(Carousel, 5000);
+        var pause = document.getElementById("carousel");
+        pause.addEventListener("mouseenter", function( event ) { 
+              paused = true; 
+              setTimeout(function() { paused = false; }, 10000);
+           });
+     }
+  </script>
+
+  <script src="/lib/ex/px_bundle.js"></script>
+  <script src="/lib/ex/d3-jetpack.js" charset="utf-8"></script>
+  <script src="/lib/ex/d3.svg.multibrush.js" charset="utf-8"></script>
+  <script src="/lib/ex/d3.superformula.min.js" charset="utf-8"></script>
+  <script src="/lib/ex/spin.min.js" charset="utf-8"></script>
+  <script src="/cors/aip-cors.js" type="text/javascript" ></script>
+
+  <script src="core/mcpSequence.js" charset="utf-8"></script>
+  <script src="core/statistics.js" charset="utf-8"></script>
+  <script src="core/matchObject.js" charset="utf-8"></script>
+
+  <script src="io/parsers.js" charset="utf-8"></script>
+  <script src="io/sources.js" charset="utf-8"></script>
+  <script src="io/readWrite.js" charset="utf-8"></script>
+
+  <script src="viz/pCoords.js" charset="utf-8"></script>
+  <script src="viz/overview.js" charset="utf-8"></script>
+  <script src="viz/statView.js" charset="utf-8"></script>
+  <script src="viz/ptsChart.js" charset="utf-8"></script>
+  <script src="viz/gameFish.js" charset="utf-8"></script>
+  <script src="viz/GameTree.js" charset="utf-8"></script>
+  <script src="viz/RallyTree.js" charset="utf-8"></script>
+  <script src="viz/radarChart.js" charset="utf-8"></script>
+  <script src="viz/horizonChart.js" charset="utf-8"></script>
+  <script src="viz/ptsHorizon.js" charset="utf-8"></script>
+  <script src="viz/ladderChart.js" charset="utf-8"></script>
+
+  <script src="rough/datePicker.js" charset="utf-8"></script>
+  <script src="rough/search.js" charset="utf-8"></script>
+  <script src="rough/matchView.js" charset="utf-8"></script>
+  <script src="rough/playerView.js" charset="utf-8"></script>
+  <script src="rough/scripts.js" charset="utf-8"></script>
+  <script src="rough/Browser.js" charset="utf-8"></script>
+
+  <script src="/lib/ex/xlsx.core.min.js" defer></script>
+
+</body>
+</html>
+

@@ -1,0 +1,117 @@
+{ name: "Horizontal Black", html: `
+<div id="horizontalentry">
+   <div id='h_scoreboard' class='h_flexrows'>
+      <div id='h_playernames' class='h_flexcols'>
+         <div id='h_playerone' class='h_playername h_flexcenter display_player_0'> Player One</div>
+         <div id='h_playertwo' class='h_playername h_flexcenter display_player_1'> Player Two </div>
+      </div>
+      <div id='h_scores' class=''>
+         <div class='h_setscore h_flexcols'>
+            <div class='h_flexcenter h_score'><div class='ss0_0'> 0 </div></div>
+            <div class='h_flexcenter h_score'><div class='ss0_1'> 0 </div></div>
+         </div>
+         <div class='h_setscore h_flexcols'>
+            <div class='h_flexcenter h_score'><div class='ss1_0'> - </div></div>
+            <div class='h_flexcenter h_score'><div class='ss1_1'> - </div></div>
+         </div>
+         <div class='h_setscore h_flexcols'>
+            <div class='h_flexcenter h_score'><div class='ss2_0'> - </div></div>
+            <div class='h_flexcenter h_score'><div class='ss2_1'> - </div></div>
+         </div>
+         <div class='h_setscore h_flexcols'>
+            <div class='h_flexcenter h_score'><div class='ss3_0'>   </div></div>
+            <div class='h_flexcenter h_score'><div class='ss3_1'>   </div></div>
+         </div>
+         <div class='h_setscore h_flexcols'>
+            <div class='h_flexcenter h_score'><div class='ss4_0'>   </div></div>
+            <div class='h_flexcenter h_score'><div class='ss4_1'>   </div></div>
+         </div>
+      </div>
+   </div>
+   <div id='h_timer' class='h_flexrows'>
+      <div class='h_playerside h_flexleft'>
+         <div id='h_playerleft' class='display_player_0'>Player One</div>
+      </div>
+      <div class='h_datetime'> &nbsp; </div>
+      <div class='h_datetime'> &nbsp; </div>
+      <div class='h_playerside h_flexright'>
+         <div id='h_playerright' class='display_player_1'>Player Two</div> 
+      </div>
+   </div>
+   <div id='h_entry' class='h_flexrows'>
+      <div id='h_left' class='h_flexcols h_borderright'>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "fault", 0)'>
+            <div class='h_button h_fault h_leftserving'> Fault </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "winner", 0)'>
+            <div class='h_button h_winner'> Winner </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "unforced", 0)'>
+            <div class='h_button h_unforced'> Unforced Error </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "forced", 0)'>
+            <div class='h_button h_forced'> Forced Error </div>
+         </div>
+      </div>
+      <div id='h_center' class='h_flexcols'>
+         <div id='h_extras' class='h_flexrows'>
+            <div class='h_serviceaction h_flexcenter' onclick='mt.classAction(this, "ace", 0)'>
+               <div class='h_button h_winner h_leftserving'> Ace </div>
+            </div>
+            <div class='h_message h_flexcenter'> <div class='h_messagetext'> &nbsp; </div> </div>
+            <div class='h_serviceaction h_flexcenter' onclick='mt.classAction(this, "ace", 1)'>
+               <div class='h_button h_winner h_rightserving'> Ace </div>
+            </div>
+         </div>
+         <div id='h_points' class='h_flexrows'>
+            <div class='h_point h_flexcenter h_borderright' onclick='mt.classAction(this, "point", 0)'>
+               <div class='display_points_0'>0</div>
+            </div>
+            <div class='h_point h_flexcenter h_borderleft' onclick='mt.classAction(this, "point", 1)'>
+               <div class='display_points_1'>0</div>
+            </div>
+         </div>
+      </div>
+      <div id='h_right' class='h_flexcols h_borderleft'>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "fault", 1)'>
+            <div class='h_button h_fault h_rightserving'> Fault </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "winner", 1)'>
+            <div class='h_button h_winner'> Winner </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "unforced", 1)'>
+            <div class='h_button h_unforced'> Unforced Error </div>
+         </div>
+         <div class='h_action h_flexcenter' onclick='mt.classAction(this, "forced", 1)'>
+            <div class='h_button h_forced'> Forced Error </div>
+         </div>
+      </div>
+   </div>
+   <div id='h_menu' class='h_flexrows'>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "menu")'>
+         <div class='h_button'> Menu </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "history")'>
+         <div class='h_button'> History </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.classAction(this, "penalty", 0)'>
+         <div class='h_button'> Penalty </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "info")'>
+         <div class='h_button'> Info </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "stats")'>
+         <div class='h_button'> Stats </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.classAction(this, "penalty", 1)'>
+         <div class='h_button'> Penalty </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "redo")'>
+         <div class='h_button'> Redo </div>
+      </div>
+      <div class='h_menuitem h_flexcenter' onclick='mt.menuAction(this, "undo")'>
+         <div class='h_button'> Undo </div>
+      </div>
+   </div>
+</div>
+` }

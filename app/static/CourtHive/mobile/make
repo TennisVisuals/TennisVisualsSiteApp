@@ -1,0 +1,4 @@
+cat ./components/UUID.js ./components/browserStorage.js ./components/d3.v4.min.js ./components/matchObject.js ./components/d3-pulse-circle.js ./components/simpleChart.js ./components/touchManager.js ./components/clipboard.min.js ./components/gameFish.js ./components/gameTree.js ./components/ptsChart.js ./components/socket.io.min.1.7.2.js > lib_bundle.js
+
+mv lib_bundle.js lib
+

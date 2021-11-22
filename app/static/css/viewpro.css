@@ -1,0 +1,77 @@
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: auto; position: relative; cursor: default; }
+
+.axis line, .axis path { fill: none; stroke: #000; shape-rendering: crispEdges; }
+.axis text { text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff; cursor: move; }
+.brush .extent { fill-opacity: .3; stroke: #fff; shape-rendering: crispEdges; }
+
+div.ttip { position: absolute; text-anchor: middle; text-align: center; width: 100px; height: 30px;	padding: 2px; font: 14px sans-serif;
+           background: lightsteelblue; border: 0px; border-radius: 8px; pointer-events: none; }
+
+#load_burst { position: absolute; font-size: 14px; right: 5px; top: 2px; }
+#sample { position: absolute; top: 2px; right: 20px; }
+
+#loading { position: absolute; top: 150px; width: 50%; height: 150px; }
+#welcome { position: relative; margin: auto; width: 700px; height: 700px;}
+#instructions { position: relative; top: 30px; margin: auto; width: 600px; padding: 10px; }
+#example_burst { position: absolute; top: 30px; left: 65%;  display: inline-block }
+#example_breakpoints { position: absolute; top: 2330px; left: 67%;  display: inline-block }
+#example_fish { position: absolute; top: 1150px; left: 62%;  display: inline-block }
+#example_court { position: absolute; top: 1700px; left: 67%;  display: inline-block }
+
+/* player context bar */
+#menu { position: absolute; width: 100%; top: 0px; height: 30px; background-color: black}
+#context { position: absolute; width: 350px; left: 0px; top: 0px; height: 50px; background-color: white}
+#title { position: absolute; top: 2px; left: 10px; width: 100px; color: gold; font-size: 20px; text-decoration: none}
+#home { position: absolute; top: 2px; left: 10px; width: 100px; color: gold; font-size: 20px; text-decoration: none}
+#tennisabstract { position: absolute; top: 5px; right: 105px; color: lightblue; font-size: 16px; text-decoration: none}
+#view_calendar { position: absolute; top: 2px; left: 10px; color: gold; font-size: 20px; }
+
+/* toggle control
+#center_display { position: absolute; left: 480px; top: 550px; }
+*/
+
+/* panel comment attributes */
+#main { top: 260px; }
+#container { top: 30px; position: absolute }
+#r_large { position: absolute; }
+#radar { top: 0px; position: absolute; }
+#pcoord, #proview, #recovery, #points, #matches, #pts { top: 5px; }
+#stats { top: 0px; }
+#recovery, #stats { left: 300px; height: 550px; width: 580px; }
+#momentum { top: 0px; left: 390px; height: 550px; }
+#rallygraph { top: 40px; left: 60px; height: 550px; }
+#parallels { top: 0px; left: 80px; height: 400px; }
+#points { left: 960px; height: 400px; width: 320; }
+#pcoord { left: 40px; height: 500px; }
+#main, #pcoord, #sunburst, #proview, #recovery, #parallels, #tools, #aster, #calendar, #stats, #points, #pts, #game, #matches, #momentum { position: absolute; }
+#sunburst, #proview, #recovery, #parallels, #aster, #matches { display: none; }
+
+#calendar { position: absolute; width: 960px; height: 800px; left: 180px; top: 50px; cursor: default; font: 10px sans-serif; shape-rendering: crispEdges; }
+.day { fill: #fff; stroke: #ccc; }
+.month { fill: none; stroke: #000; stroke-width: 2px; }
+#day_matches { height: 800px; }
+
+.RdYlGn { position: absolute; top: 30px; dispplay: inline-block}
+.title { position: absolute; width: 100%; text-align: center; font-size: 18px; dispplay: inline-block}
+.zzz { cursor: zoom-in; }
+
+rect.mrb:hover { fill: orange; }
+rect.fishbar:hover { fill: yellow; }
+circle:hover { fill: orange; }
+
+/* panel unique attributes */
+#p0 { position: absolute }
+#sunburst { top: 20px; left: 850px; width: 350px; }
+#matches { left: 100px; width: 1100px; }
+#pcoord { width: 1200px; }
+#aster { left: 40px; top: 35px; width: 320px; height: 320px; }
+/* #proview, #pts, #game { left: 980px; width: 350px; height: 500px; } */
+#game { left: 330px; width: 500px; height: 800px; }
+
+/* sunburst unique attributes */
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }

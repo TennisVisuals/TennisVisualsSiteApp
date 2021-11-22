@@ -1,0 +1,224 @@
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <h2 class="metaHeading" >Players</h2>
+   </div>
+   <div class="flex-meta-child">
+      <input type="checkbox" id="choosedoubles" name="choosedoubles" value="doubles" onClick="metaEdit.doublesClick(this)">Doubles
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div id="p1div" class="flex-meta-child">
+      <input name="playerone" id="playerone" class="MDplayerentry teamone" type="text" spellcheck="false" placeholder="Player One" tabindex="1" onfocus="this.setSelectionRange(0, this.value.length)" autocomplete="off" aria-autocomplete="list">
+      <select class="MDselection" name="p1hand" id="p1hand" tabindex="2">
+         <option value="R">R</option>
+         <option value="L">L</option>
+      </select>
+   </div>
+   <div id="p2div" class="flex-meta-child">
+      <input name="playertwo" id="playertwo" class="MDplayerentry teamtwo" type="text" spellcheck="false" placeholder="Player Two" tabindex="3" onfocus="this.setSelectionRange(0, this.value.length)" autocomplete="off" aria-autocomplete="list">
+      <select class="MDselection" name="p2hand" id="p2hand" tabindex="4">
+         <option value="R">R</option>
+         <option value="L">L</option>
+      </select>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div id="p3div" class="flex-meta-child">
+      <input name="player3" id="player3" class="MDplayerentry teamone" type="text" spellcheck="false" placeholder="2nd Player Team One" tabindex="5" onfocus="this.setSelectionRange(0, this.value.length)" autocomplete="off" aria-autocomplete="list">
+      <select class="MDselection" name="p3hand" id="p3hand" tabindex="6">
+         <option value="R">R</option>
+         <option value="L">L</option>
+      </select>
+   </div>
+   <div id="p4div" class="flex-meta-child">
+      <input name="player4" id="player4" class="MDplayerentry teamtwo" type="text" spellcheck="false" placeholder="2nd Player Team Two" tabindex="7" onfocus="this.setSelectionRange(0, this.value.length)" autocomplete="off" aria-autocomplete="list">
+      <select class="MDselection" name="p4hand" id="p4hand" tabindex="8">
+         <option value="R">R</option>
+         <option value="L">L</option>
+      </select>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <h2 class="metaHeading" >Match</h2>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <label name="firstservice_label" id="firstservice_label">
+         First Service
+         <select class="MDselection" name="firstservice" id="firstservice" tabindex="9">
+            <option value="0">1</option>
+            <option value="1">2</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="advantage_label" id="advantage_label">
+         Advantages
+         <select class="MDwideselection" name="advantages" id="advantages" tabindex="10">
+            <option value="true">Normal</option>
+            <option value="false">No Advantage</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="lets_label" id="lets_label">
+         Lets
+         <select class="MDwideselection" name="lets" id="lets" tabindex="11">
+            <option value="true">Normal</option>
+            <option value="false">No Lets</option>
+         </select>
+      </label>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <label name="bestof_label" id="bestof_label">
+         Best of 
+         <select name="bestof" id="bestof" class="MDselection" tabindex="12">
+            <option value="1">1</option>
+            <option value="3" selected="selected">3</option>
+            <option value="5">5</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="setsto_label" id="setsto_label">
+         Sets to 
+         <select name="setsto" id="setsto" class="MDselection" tabindex="13">
+            <option value="8">4</option>
+            <option value="12" selected="selected">6</option>
+            <option value="14">7</option>
+            <option value="16">8</option>
+            <option value="18">9</option>
+            <option value="20">10</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="tiebreakat" id="tiebreakat_label">
+         Tie-break at
+         <select name="tiebreakat" id="tiebreakat" class="MDselection" tabindex="24">
+            <option value="5">5</option>
+            <option value="6" selected="selected">6</option>
+            <option value="false">-</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="tiebreakto_label" id="tiebreakto_label">
+         Tie-break to
+         <select name="tiebreakto" id="tiebreakto" class="MDselection" tabindex="14">
+            <option value="7" selected="selected">7</option>
+            <option value="12">12</option>
+            <option value="false">-</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="finalset_label" id="finalset_label">
+         Final Set
+         <select name="finalset" id="finalset" class="MDwideselection" tabindex="15">
+            <option value="normal" selected="selected">Normal</option>
+            <option value="supertiebreak">Super Tie-break</option>
+            <option value="longset">Long Set</option>
+         </select>
+      </label>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <label name="round_label" id="round_label">
+         Round 
+         <select class="MDround" name="round" id="round" tabindex="17">
+            <option value="">-</option>
+            <option value="F">F</option>
+            <option value="SF">SF</option>
+            <option value="QF">QF</option>
+            <option value="R16">R16</option>
+            <option value="R32">R32</option>
+            <option value="R64">R64</option>
+            <option value="R128">R128</option>
+            <option value="Q1">Q1</option>
+            <option value="Q2">Q2</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="surface_label" id="surface_label">
+         Surface 
+         <select class="MDround" name="surface" id="surface" tabindex="18">
+            <option value="">-</option>
+            <option value="H">Hard</option>
+            <option value="C">Clay</option>
+            <option value="G">Grass</option>
+            <option value="T">HarTru</option>
+         </select>
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label name="category_label" id="category_label">
+         Gender 
+         <select name="category" id="category" class="MDselection" tabindex="19">
+            <option value="">-</option>
+            <option value="M">M</option>
+            <option value="W">W</option>
+         </select>
+      </label>
+   </div>
+</div>
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <label id="court_label" name="court_label">
+         Court 
+         <input autocomplete="off" name="court" class="MDcourt" type="text" value="" id="court" placeholder="Court" tabindex="20">
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label id="umpire_label" name="umpire_label">
+         Umpire 
+         <input autocomplete="off" name="umpire" class="MDumpire" type="text" value="" id="umpire" placeholder="Umpire" tabindex="21">
+      </label>
+   </div>
+</div>
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <label id="date_label">
+         Date 
+         <input autocomplete="off" name="matchdate" class="MDvaliddate" type="text" value="" id="matchdate" placeholder="YYYY-MM-DD" tabindex="22">
+      </label>
+   </div>
+   <div class="flex-meta-child">
+      <label id="chartedby_label">
+         Charted by 
+         <input autocomplete="off" name="charter" class="MDcharter" type="text" value="" id="charter" placeholder="" tabindex="23">
+      </label>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <h2 class="metaHeading" >Tournament</h2>
+   </div>
+</div>
+
+<div class="flex-meta-parent">
+   <div class="flex-meta-child">
+      <input autocomplete="off" name="tournament" class="MDtournament" type="text" value="" id="tournament" placeholder="Tournament Name" tabindex="16">
+   </div>
+</div>
+
+<p>
+<div class="flex-meta-parent flex-center">
+   <div class="flex-meta-child">
+      <button id="metaSubmit" class="btn meta-btn meta-submit" alt="Submit Metadata" onclick="metaEdit.submitMeta()" tabindex="-1">Submit</button> 
+      <button id="metaCancel" class="btn meta-btn meta-cancel" alt="Cancel Metadata" onclick="metaEdit.cancelMeta()" tabindex="-1">Cancel</button> 
+   </div>
+</div>

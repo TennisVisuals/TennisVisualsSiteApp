@@ -1,0 +1,289 @@
+----------------
+parsers.js:1608 RCS2 RC
+parsers.js:1346 shot_code: b / trajectory: cross court / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 4P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 1RC RC
+parsers.js:1346 shot_code: b / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 4DC 
+parsers.js:1346 serve_attributes: Twice / 
+parsers.js:1607 ----------------
+parsers.js:1608 DLS3 C
+parsers.js:1346 shot_code: f / trajectory: down the line,inside in / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 HP2 HP
+parsers.js:1346 shot_code: f / trajectory: inside in / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 4DC 
+parsers.js:1346 serve_attributes: Twice / 
+parsers.js:1607 ----------------
+parsers.js:1608 3CC CC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 4RL RL
+parsers.js:1346 shot_code: b / trajectory: down the line / 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 2 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 6RLE RL
+parsers.js:1346 shot_code: b / shot_attributes: approach / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 HC2 HC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 4P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 HC2 HC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 G22 G
+parsers.js:1346 shot_code: b / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCR3 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CPCR3 CPC
+parsers.js:1346 shot_code: f / shot_attributes: passing / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 V 
+parsers.js:1346 shot_code: q / shot_attributes: approach / 
+parsers.js:1607 ----------------
+parsers.js:1608 GC2 GC
+parsers.js:1346 shot_code: b / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 H11 H
+parsers.js:1346 shot_code: f / 
+parsers.js:1607 ----------------
+parsers.js:1608 4 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 RCR3 RC
+parsers.js:1346 shot_code: b / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 6DL 
+parsers.js:1346 serve_attributes: Twice / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 HP2 HP
+parsers.js:1346 shot_code: f / trajectory: inside in / 
+parsers.js:1607 ----------------
+parsers.js:1608 3P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 HD2 H
+parsers.js:1346 shot_code: f / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCS3 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCS3 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 6D 
+parsers.js:1346 serve_attributes: Twice / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 3CL CL
+parsers.js:1346 shot_code: f / trajectory: down the line / 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 HP2 HP
+parsers.js:1346 shot_code: f / trajectory: inside in / 
+parsers.js:1607 ----------------
+parsers.js:1608 RLS3 RL
+parsers.js:1346 shot_code: b / trajectory: down the line / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CLS3 CL
+parsers.js:1346 shot_code: f / trajectory: down the line / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 3CL CL
+parsers.js:1346 shot_code: f / trajectory: down the line / 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 6RL RL
+parsers.js:1346 shot_code: b / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 HD2 H
+parsers.js:1346 shot_code: f / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 1 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 CLS3V CL
+parsers.js:1346 shot_code: f / shot_attributes: approach / trajectory: down the line / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 HD2 H
+parsers.js:1346 shot_code: f / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 VRL RL
+parsers.js:1346 shot_code: z / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 EN3 
+parsers.js:1346 shot_code: q / shot_attributes: approach / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 6 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 2CLE CL
+parsers.js:1346 shot_code: f / shot_attributes: approach / trajectory: down the line / 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 6 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 RCR4 RC
+parsers.js:1346 shot_code: b / trajectory: cross court / rally_range: >8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 4CC CC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 1 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 G22 G
+parsers.js:1346 shot_code: b / 
+parsers.js:1607 ----------------
+parsers.js:1608 VR3 
+parsers.js:1346 shot_code: q / shot_attributes: approach / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 VCP CP
+parsers.js:1346 shot_code: v / shot_attributes: passing / 
+parsers.js:1607 ----------------
+parsers.js:1608 6P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 RCR3 RC
+parsers.js:1346 shot_code: b / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 1CL CL
+parsers.js:1346 shot_code: f / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 CLR2 CL
+parsers.js:1346 shot_code: f / trajectory: down the line / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 RCS4 RC
+parsers.js:1346 shot_code: b / trajectory: cross court / rally_range: >8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 V 
+parsers.js:1346 shot_code: q / shot_attributes: approach / 
+parsers.js:1607 ----------------
+parsers.js:1608 GL2 GL
+parsers.js:1346 shot_code: b / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 1P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 4 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 3RL RL
+parsers.js:1346 shot_code: b / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 G21 G
+parsers.js:1346 shot_code: b / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCS3 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 4 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 3CC CC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 H11 H
+parsers.js:1346 shot_code: f / 
+parsers.js:1607 ----------------
+parsers.js:1608 CLR3 CL
+parsers.js:1346 shot_code: f / trajectory: down the line / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CPLR4 CPL
+parsers.js:1346 shot_code: f / shot_attributes: passing / trajectory: down the line / rally_range: >8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 V 
+parsers.js:1346 shot_code: q / shot_attributes: approach / 
+parsers.js:1607 ----------------
+parsers.js:1608 4 
+parsers.js:1357 DOUBLE FAULT
+parsers.js:1607 ----------------
+parsers.js:1608 H11 H
+parsers.js:1346 shot_code: f / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCR2 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 3P 
+parsers.js:1346 serve_attributes: Power / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 HD2 H
+parsers.js:1346 shot_code: f / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 HC2 HC
+parsers.js:1346 shot_code: f / trajectory: cross court / 
+parsers.js:1607 ----------------
+parsers.js:1608 RLS2 RL
+parsers.js:1346 shot_code: b / trajectory: down the line / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 V 
+parsers.js:1346 shot_code: q / shot_attributes: approach / 
+parsers.js:1607 ----------------
+parsers.js:1608 RPLS3 RPL
+parsers.js:1346 shot_code: b / shot_attributes: passing / trajectory: down the line / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 6D 
+parsers.js:1346 serve_attributes: Twice / 
+parsers.js:1353 SERVE WINNER
+parsers.js:1607 ----------------
+parsers.js:1608 CCS3 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 GL2 GL
+parsers.js:1346 shot_code: b / trajectory: down the line / 
+parsers.js:1607 ----------------
+parsers.js:1608 3 
+parsers.js:1355 ACE
+parsers.js:1607 ----------------
+parsers.js:1608 CER3 C
+parsers.js:1346 shot_code: f / trajectory: center / rally_range: 5-8 / 
+parsers.js:1607 ----------------
+parsers.js:1608 RER2 R
+parsers.js:1346 shot_code: b / trajectory: center / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 RES2 R
+parsers.js:1346 shot_code: b / trajectory: center / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 CCR2 CC
+parsers.js:1346 shot_code: f / trajectory: cross court / rally_range: 3-4 / 
+parsers.js:1607 ----------------
+parsers.js:1608 H12 H
+parsers.js:1346 shot_code: f / 
+parsers.js:1607 ----------------
+parsers.js:1608 CER2 C
+parsers.js:1346 shot_code: f / trajectory: center / rally_range: 3-4 / 

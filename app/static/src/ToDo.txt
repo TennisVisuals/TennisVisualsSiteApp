@@ -1,0 +1,188 @@
+Development Path
+
+Rename Models and modify all sources references
+y Match -> TMatch
+y Tournament -> TTourney
+y Player -> TPlayer
+y User stays User
+
+y REVERSE STATS WHEN ADDING REVERSED MATCH
+y add player data to database from jeff's file
+
+STATBROWSER
+stat for # of matches vs. # of opponents.  People higher on the tour would tend to face the same players more often...?
+
+for graphs that appear below parallel coordinates, each time one is generated cache the data
+   ... such that when the same graph is generated for a *different* player, the two can be compared
+
+ladderChart FILTERS
+change the interaction between the datePicker and the surface filters so that when a surface has been filtered the datePicker selects for only that surface...
+
+GEO
+Map of Croatia and surrounding countries when scroll through date ranges show tournament locations shape/color for U12-18/surface
+Show lines for date "flows" -> Sankey diagrams overlaid on maps... in fact, use the animated Sankeys! Thickness of line going IN to a tournament can indicate Draw Size
+
+NEW GRAPHS
+Opponents over time
+Win Ratio vs. Opponents over time
+
+tournament dominance ratio... what percentage of games won as tournament progresses
+... graph all players showing win percentage on Y axis and sets on X axis
+
+CourtHive menu to sidebar
+
+LOGINS
+Support for cookies and user logins
+1. When upload a match (or tennis-math key) add to database with userid to protect access
+
+PLAYER BIOGRAPHICAL INFO
+
+Head to Head (Head2Head)
+Along with LadderChart (Tournament Outcomes) a chart where it is possible to rank opponents by # times faced / win %
+How to compare all opponents with respect to various aggregate stats for that opponent?
+   --> show Stat browser with stats vs. Opponents instead of stats for Matches !!!
+
+Chart which shows win/loss over time vs all opponents.  no time scale.  1st/2nd/3rd/etc encounter up/down. 
+Perhaps a set of progression patterns...  So you can see collection of opponents with the same win/loss progression.
+Kind of like a sideways GameTree / Sankey flows...
+
+Graphic to compare height, weight, age, rank and globe/map for origin
+
+LADDER CHART
+Menu options to filter chart based on opponent
+Surface filters appear as colored circles near the top right... Hovering over them initiates dynamic transition!
+Transition is of both Ladder Chart and the Parallel Coordinates Chart of Statistics...
+
+PARALLEL COORDINATES
+add this ability to handle situations where there is more/less data
+https://bocoup.com/weblog/showing-missing-data-in-line-charts
+
+PTS CHART
+ptsChart needs to understand Super Tie-breaks
+Indicate player who made winners/errors by starting the color from top to bottom for player one and vice versa for player two. 
+If no rally (length 0) use gradients from red to white or green to white...
+
+TOURNAMENT GLOBE
+Wrap the order of the tournaments in a line that girdles (or runs across the face of) the globe
+perhaps the line changes color over time, so the beginning of a player's chart is one color and changes moving forward in time
+When the globe is rotated the tournaments on the ladder chart are highlighted when they are "in view"...
+
+When viewing a specific tournament show on globe then show where players originated from
+But Also, where the players traveled from... the last match at the last tournament... 
+the connecting line can be color coded to show the time for travel between tournaments.  If short, red, if long, green.
+Also take time zone changes into account...
+
+SUNBURST
+think about replacing or augmenting Sunburst view with this example...
+http://www.c82.net/blog/?id=72
+
+CourtHive
+Window resizing not implemented for PTS / Momentum
+resizing for elements doesn't take into consideration the width of the side menu, so Overview and StatView are off-screen a bit
+
+RALLYTREE
+when there are no rallies > length 3, don't show RallyTree
+when there are Super Tie-breaks and no RallyTree, show a GameFish for third set
+
+overlay for RallyTree such that hovering over a particular ROW on either side give the # of points and rally length.
+scope stats to a selected ROW.
+
+Also include an optional popup chart at the bottom like in STA METHOD y-axis is # of points x-axis is divided into rally-ranges
+1-2, 3-4, 5-8, 8+
+
+PARALLEL COORDINATES
+shows up just below ladderChart
+- displays stats for all player matches
+- can be filtered by surface
+
+SEARCH
+- tournament search
+
+TOURNAMENT HORIZON CHART ORDERING:
+Viktor Troicki Sydney 2016 SF/F are out of order, both happen on the same date
+—> need to sort by ROUND if matches occur on the same day…
+
+When match.status == retired, default, walkover
+set 'won' attribute in buildMatchList by match.winner
+
+NEW VIZ:
+*. Sanja - progression of i.e. serve throughout the match
+   --> enabled moving average which can be overlayed on momentum chart
+   ---> like the Tennis Comstat reports!
+
+GAMETREE.JS
+use GameTree to scope stats (same as brushing Horizon Chart).
+   - scope by serving player
+   - scope by clicking a specific point progression
+
+STATISTICS.JS
+Statistics: don't count 'point won' in stars for 1st serve or security 2nd serve & etc.
+*** Receiving Points Won 2nd has an incorrect % calculation
+
+STATVIEW.JS
+Aggressive Margin should have a maximum width
+Bars should have a more intelligent split when there are comparisons of Percentages
+-> Perhaps total percentages (as if they were whole numbers) and show each percentage as percentage of the total
+--> Player AVERAGE stats can be shown as a slightly thicker bar behind each stat
+
+MCPS.JS
+Player Initials cell can get too big (JMDP - Juan Martin del Portro) and throws other columns off...
+either auto-resize the rest of the spreadsheet, or auto-shrink the size of the characters in this column
+
+PARSERS.JS
+implement PTF Doubles Matches parsing
+implement shot codes for MTS parsing
+
+MATCHOBJECT.JS
+August Allen_Luca Stella_7-Jun-2015.ptf tiebreak_at sets to 3 not implemented...
+
+METADATA.JS
+when retrieve a player name, also retrieve bio info so that e.g. hand can be set automatically
+
+MEDIA
+Solicit public domain images and links to articles about specific matches
+as well as Twitter, Facebook & website links for specific players
+as part of 'crowdsourcing'
+
+//////////////////////////// BUGS: /////////////////////////////
+http://localhost:8080/new/CourtHive/devel.html?timeline=9901519
+statview has breakpoints won as 150% and breakpoints saved as -50%
+Is it because there are no advantages?
+
+Tennis Scoreboard 57G
+Match Scores don't match
+15:10:38 15 - 0 Score is removed...
+points.split(8,1) to remove the offending point...
+
+Tennis Scoreboard 970
+Final set is a Super Tie-break and stands at 2-0
+BUT the tiebreak score is shown both as 2T-0T and 2-0.  Need to display 10-? when COMPLETE, but otherwise 2T-0T.
+
+Tennis Scoreboard 6AJ
+There are two points which are invalid because they are incomplete
+REASON: Game log is nonsensical.
+FIX NEEDED: Check games scores are well ordered
+
+
+TESTING PLAN:
+Each type of file
+Each type of match
+Each type of point entry "MCP" 0/1 and S/P/Q/R
+Change each metadata setting, then change back to see if data preserved
+
+----------SERVER------------
+
+when files mailed to the server are parsed, owner gets an email back with confirmation and an URL to view the match.
+   - they should also be given the opportunity to create an account to authorize:
+      - future editing of the match data
+        - identifying players and tying them to their [i.e. TennisEurope] identity
+        - specifying additional information about the match, venue gps coordinates & etc.
+
+
+-----------TOURNAMENT APPLICATION-------------
+
+TOURNAMENT APPLICATION:
+Match scores for any number of games
+Allows adjusting game or point score at any time -- a UMO behind each so it's possible to enter tracking mode for any match at any time.
+Automagically constructs draw based on round information and player names.
+Broadcasts all information to publicly accessible tournament page.

@@ -1,0 +1,99 @@
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+tr td {
+   padding:0; margin:0;
+}
+
+/* mcpTable entry */
+
+table.scroll { border-spacing: 0; }
+table.scroll tbody,
+table.scroll thead { display: block; }
+table.scroll tbody {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table.scroll tbody td:last-child, table.scroll thead th:last-child {
+    border-right: none;
+}
+
+#mcpTable {
+   left: 65px;
+   top: 100px;
+   border-collapse: collapse;  
+   border: 1px solid #999;
+   background-color: #FFF;
+}
+
+#mcpTable td, #mcpTable th {
+    min-width: 30px;
+    border: 1px solid #999;
+    padding: 1px;
+    text-align: center;
+}
+
+#mcpTable td:first-child, #mcpTable th {
+    background-color: #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+#mcpTable thead tr {
+    background-color: #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mcpTable td:nth-child(6) {
+    min-width: 60px;
+}
+
+#mcpTable thead td:nth-child(6) {
+    min-width: 60px;
+}
+
+#mcpTable thead td {
+    min-width: 30px;
+}
+
+.cell {
+    border: none;
+    font-size: 14px;
+    padding: 0;
+}
+
+.notes { font-size: 12px; }
+
+.font14 { font-size: 14px; }
+.font13 { font-size: 13px; }
+.font12 { font-size: 12px; }
+.font11 { font-size: 11px; }
+.font10 { font-size: 10px; }
+.font9 { font-size: 9px; }
+
+.cell:hover {
+    /* background-color: #eee; */
+}
+
+.cell:focus {
+    /* background-color: #ccf; */
+}
+
+.service:not(:focus) { text-align: left; }
+
+.cell9 { width: 300px;  text-align: left; }
+.cell10 { width: 300px; text-align: left; }
+.cell11 { width: 40px;  text-align: left; }
+
+.cellvalid { background-color: #fff; }
+.cellvalid:focus { background-color: #fff; }
+.cellinvalid { background-color: #FDD; }
+.cellinvalid:focus { background-color: #FDD; }
+.cellincomplete { background-color: #FFFF00; }
+.cellincomplete:focus { background-color: #FFFF00; }
+
+

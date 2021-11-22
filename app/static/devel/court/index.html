@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+<html manifest="court.manifest">
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MatchView">
+<meta name="application-name" content="MatchView">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Match View</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="wheel.css">
+  <style> .overlay { fill: none; pointer-events: all; } </style>
+</head>
+
+<body>
+   <div id="container"></div>
+
+   <script src="/lib/ex/d3.v3.min.js" charset="utf-8"></script>
+   <script src='/lib/ex/tinycolor.js'></script>
+   <script src="/lib/ex/three.min.js"></script>
+   <script src="matchObject.js"></script>
+   <script src="mtouch-events.js"></script>
+   <script src="Detector.js"></script>
+   <script src="court.js"></script>
+
+   <script> 
+      // cache = window.applicationCache;
+      // cache.addEventListener('updateready', updateCache, false);
+      // function updateCache() {
+      //    cache.swapCache();
+      // }
+
+      C3D.init(); C3D.render();
+   </script>
+   <div id="colorwheel" class="colorwheel" style="display: none">
+      <div id="theme"></div>
+   </div>
+   <script src="colorwheel.js"></script>
+   <script src="colorwheel.theme.js"></script>
+   <script>
+
+      var data = [
+        'blue', 
+        'lightblue' 
+      ];
+
+      ColorWheel && ColorWheel.extend('output', function (colorWheel, data) {
+        colorWheel.dispatch.on('update.output', function () {
+           var d = data[0];
+           var c = tinycolor({h: d.h, s: d.s, v: d.v}).toHexString();
+           var d = data[1];
+           var s = tinycolor({h: d.h, s: d.s, v: d.v}).toHexString();
+           C3D.courtColors(c, s)
+           C3D.render();
+        });
+      });
+
+      var colorWheel = new ColorWheel(5, '#colorwheel'); 
+
+   </script>
+
+</body>
+</html>
+

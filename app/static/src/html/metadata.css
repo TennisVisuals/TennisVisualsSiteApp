@@ -1,0 +1,163 @@
+/* METADATA */
+
+#meta { 
+  z-index: 100;
+  position: absolute; left: 60px; top: 20px; width: 550px; height: auto; padding: 10px; display: none; background: #FFF;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 2px solid #000;
+}
+
+h2.metaHeading {
+    font: 400 28px/28px 'Montserrat', sans-serif;
+}
+
+@media(max-width:640px) {
+   #meta {
+      width: 380px;
+   }
+}
+
+@media(max-width:470px) {
+   #meta {
+     width: 100%; left: 0px; top: 0px; padding: 0px;
+     -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border: 0px solid #000;
+   }
+   .flex-meta-child {
+      padding: 0px 5px 0px 5px;
+   }
+}
+
+.meta-btn {
+    background: 0;
+    border: 1px solid #000;
+    margin-top: 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    -webkit-transition: background ease-out 500ms;
+    -moz-transition: background ease-out 500ms;
+    -o-transition: background ease-out 500ms;
+    transition: background ease-out 500ms;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+button.meta-submit:hover { background: #68FF33 }
+button.meta-cancel:hover { background: #FF0 }
+
+.flex-meta-parent {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  min-height: 0;
+  min-width: 0;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-meta-child {
+  margin: 5px 2px 5px 2px;
+  flex-grow: 0
+}
+
+.MDplayerentry { 
+   width: 180px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.teamone { border: 2px solid rgb(204, 110, 204); background: rgb(221, 221, 221); }
+.teamtwo { border: 2px solid rgb(107, 110, 207); background: rgb(221, 221, 221); }
+#p3div { display: none; }
+#p4div { display: none; }
+.spacer { 
+   height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.valid { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.valid:focus { border: 2px solid #0097cf; }
+
+.invalid { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; 
+   border-color: #900; background-color: #FDD;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.invalid:focus { border: 2px solid #900; }
+
+.incomplete { 
+   width: 300px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; background-color: #FFFF00;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.incomplete:focus { border: 2px solid #736F6E; }
+
+.MDselection { 
+   width: 50px; height: 25px; padding: 6px 8px; font-size: 12px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDwideselection { 
+   width: 130px; height: 25px; padding: 6px 8px; font-size: 12px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDtournament { 
+   width: 330px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDcourt { 
+   width: 140px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDumpire { 
+   width: 140px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDround { 
+   width: 70px; height: 25px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDvaliddate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDinvaliddate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #FDD;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDincompletedate { 
+   width: 120px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #FFFF00;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+.MDcharter { 
+   width: 150px; height: 14px; padding: 6px 8px; font-size: 14px; line-height: 14px; border: 2px solid #ccc; background-color: #fff;
+  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; outline: none;
+}
+
+/* ideas for input box form */
+input.player {
+   font: inherit;
+   text-shadow: inherit;
+}
+
+input.player {
+   width: 22em;
+   padding: .1em .3em;
+   border: 0;
+   border: 1px solid hsl(35, 80%, 60%);
+   background: hsla(0,0%,100%,.2);
+   border-radius: .3em;
+   box-shadow: .05em .1em .3em rgba(0,0,0,.3) inset;
+}
+
+input.player:focus {
+   outline: none;
+   border: 1px solid #58a;
+   animation: pulsate 2s infinite alternate linear;
+   background: hsla(0,0%,100%,.5);
+}
+

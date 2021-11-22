@@ -1,0 +1,16 @@
+cat ../cors/aip-cors.js ./core/matchObject.js ./core/mcpSequence.js ./core/statistics.js ./io/parsers.js ./io/sources.js ./io/readWrite.js ./io/saveMCP.js ./viz/overview.js ./viz/statView.js ./viz/ptsChart.js ./viz/gameFish.js ./viz/GameTree.js ./viz/RallyTree.js ./viz/radarChart.js ./viz/horizonChart.js ./viz/ptsHorizon.js ./viz/ladderChart.js ./viz/pCoords.js ./rough/scripts.js ./rough/datePicker.js > tv_bundle.js
+
+cat ./rough/umoEntry.js ./html/metadata.js ./html/mcpSS.js ./html/help.js ./rough/search.js > ch_bundle.js
+
+cat ./rough/playerView.js ./rough/matchView.js ./rough/search.js ./rough/Browser.js > search_bundle.js
+
+cat ../lib/ex/awesomplete.js ../lib/ex/d3.v3.min.js ../lib/ex/d3-jetpack.js ../lib/ex/d3-legend.js ../lib/ex/d3.superformula.min.js ../lib/ex/spin.min.js > px_bundle.js
+
+cat ./css/y.css ./css/modal.css ./css/awesomplete.css ./html/mcpSS.css ./html/metadata.css ./rough/umoEntry.css > tv.css
+
+uglifyjs --compress --mangle -- search_bundle.js > ../lib/tava/search_bundle.js
+uglifyjs --compress --mangle -- ch_bundle.js >     ../lib/tava/ch_bundle.js
+uglifyjs --compress --mangle -- tv_bundle.js >     ../lib/tava/tv_bundle.js
+cp px_bundle.js ../lib/ex
+cp tv.css ../css
+

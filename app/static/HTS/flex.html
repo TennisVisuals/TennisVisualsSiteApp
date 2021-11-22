@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Tournament Draws</title>
+
+   <script src="/lib/ex/d3.v3.min.js" charset="utf-8"></script>
+   <script src="/lib/ex/topojson.v1.min.js"></script>
+   <script src="/lib/ex/d3-jetpack.js" charset="utf-8"></script>
+   <script src="/lib/ex/sylvester.js" charset="utf-8"></script>
+   <script src="/lib/ex/d3.superformula.min.js" charset="utf-8"></script>
+
+   <script src="/lib/ex/jquery-1.10.2.min.js"></script>
+   <script src="/lib/ex/typeahead.bundle.js"></script>
+   <link href="./hts.css" rel="stylesheet">
+
+   <!--
+   <script src="/lib/ex/bootstrap.min.js" charset="utf-8"></script>
+   <link rel="stylesheet" href="/lib/ex/bootstrap.min.css">
+   -->
+
+   <script>
+      if (location.origin.indexOf('localhost') < 0) {
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+         ga('create', 'UA-65756694-2', 'auto');
+         ga('send', 'pageview');
+      }
+   </script>
+   <style>
+      .flex-parent {
+        display: flex; /* or inline-flex */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: center;
+        min-height: 0;
+        min-width: 0;
+      }
+      .flex-child {
+         margin: 15px;
+         max-width: 300px;
+         flex-basis: 200px;
+         flex-grow: 1
+      }
+      .img-responsive {
+         width: 100%;
+      }
+   </style>
+
+</head>
+<body id="body">
+<div>
+   <div class="flex-parent" style="padding: 10px 0px">
+      <div class="flex-child" id="ddlb_te"> </div>
+      <div class="flex-child" id="bloodhound">
+         <input id="selected_player" class="typeahead form-control" type="text" placeholder="Player Name" onClick="this.setSelectionRange(0, this.value.length)">
+      </div>
+   </div>
+   <div class="flex-parent" id="overview">
+      <div class="flex-child" id="english" style="display: inline">
+         <p>
+         Use the dropdown menu to select the year. Enter a player name.
+         </p>
+         <h2> HTS Tournaments </h2>
+         <p>
+         Player Tournament Results are displayed for the selected year. The shape of each tournament indicates category: U12: Triangle, U14: square U16: pentagon, U18: Circle.
+         The locations of all tournaments played a selected player are displayed on the map of Croatia.
+         </p>
+         <center>
+            <img class="img-responsive" border="0" src="./playerChart.jpg" alt="Player Season Chart">
+         </center>
+         <p>
+         Tournaments are colored to represent court surface. Hovering over or clicking on a tournament displays the tournament location on a map of Croatia. Connecting lines show the origins of all players for the selected tournament.
+         </p>
+         <center>
+            <img class="img-responsive" border="0" src="./mapAndBurst.jpg" alt="Map and Burst">
+         </center>
+         <p>
+         The 'Sunburst' provides an interactive view of the tournament draw.
+         </p>
+         <p>
+         The tournament progresses from the outer ring of the Sunburst towards the center. Players and the results of matches are displayed when hovering over or clicking any part of the Sunburst. Clicking the center displays a 'heat map' of all matches, with the most intense matches (most games played) darkest red.
+         </p>
+         <p>
+         Clicking anywhere on the chart freezes the view; a second click unfreezes.
+         </p>
+         <p>
+         Seeded players are shown (in light blue) in the following positions: the first at the top, second at the bottom, third on the left, fourth on the right.
+         </p>
+         <p>
+         Seeded players range in color from light blue to purple.  Players who qualified are depicted in yellow/orange. Players who received a 'wild card' are in red (not to be confused with the "heat map" described above). All other players range from light to dark green.
+         </p>
+         <p>
+         When there is no seeding, players are depicted using a whole range of colors.
+         </p>
+      </div>
+      <div class="flex-child" id="hrvatski" style="display: none">
+         <p>
+         Koristite padajući izbornik za odabir godine. Unesite ime igrača.
+         </p>
+         <h2> HTS Turniri </h2>
+         <p>
+         Igrač Sezona Rezultati se prikazuju za odabranu godinu. Oblik svakom turniru označava kategoriju: U12: trokut, U14: kvadrat U16: peterokut, U18: krug.
+         </p>
+         <center>
+            <img class="img-responsive" border="0" src="./playerChart.jpg" alt="Player Season Chart">
+         </center>
+         <p>
+         Turniri se boji da predstavljaju teniski teren površine. Svaki turnir Lokacija je prikazana na karti Hrvatske. Spajanje linije pokazuju porijeklo igrača za svaki turnir.
+         </p>
+         <center>
+            <img class="img-responsive" border="0" src="./mapAndBurst.jpg" alt="Map and Burst">
+         </center>
+         <p>
+         The 'Sunburst' ( grafikon sunca) pruža jednostavan i interaktivan pogled na turnirski ždrijeb.
+         </p>
+         <p>
+         Tijek turnira prikazan je na „Grafikonu sunca“  od vanjskog prstena prema centru.  Igrači i rezultati teniskih mečeva  se prikazuju kada prelazite iznad ili kada kliknete na svaki dio „Grafikona sunca“. Odabirom središta „Grafikona sunca“ odabirete  svojevrsnu  'toplinsku kartu ' meča,  odnosno uvid u tijek meča  temeljen na broju odigranih gemova.
+         </p>
+         <p>
+         Kada kliknete bilo gdje na grafikonu, on se „zamrzne“,  a drugim klikom ga  „odmrzavate'. 
+         </p>
+         <p>
+         Nositelji  su prikazani na slijedečim  pozicijama: prvi na vrhu, drugi na dnu, treći lijevo, četvrti i peti desno, šesti  na dnu, sedmi  na vrhu, osmi lijevo.
+         </p>
+         <p>
+         Nositelji u ždrijebu su prikazani u rasponu od svijetlo plave do ljubičaste bnoje.  Igrači  koji su prošli kvalifikacije prikazani su u rasponu od žute do narančaste boje. Igrači koji su dobili 'wild card' nalaze se u crvenoj boji  (nemojte ih pomiješati s „toplinskom kartom“ opisanom gore). Svi ostali igrači u rasponu su od svijetlo do tamno zelene. 
+         </p>
+         <p>
+         Kada nema nositelja, za razlikovanje igrača koristi se cijela paleta boja.
+         </p>
+      </div>
+   </div>
+   <div id="matchRecord" class="flex-parent">
+      <table class="table">
+        <thead class="thead-inverse table-bordered">
+          <tr>
+            <th class="flex-child">
+              <div class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Matches Won/Lost</a>
+                <ul id="matches" class="dropdown-menu">
+                </ul>
+              </div>
+            </th>
+            <th class="flex-child">Games Won/Lost</th>
+            <th class="flex-child">Upsets Won/Lost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+             <!-- <td id="statsOpponents"></td> -->
+            <td id="statsWinLoss"></td>
+            <td id="statsGames"></td>
+            <td id="statsUpsets"></td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+   <div class="flex-parent">
+      <div class="flex-child" id="seasonchart"></div>
+   </div>
+   <div class="flex-parent">
+      <div class="flex-child" id="draws"></div>
+      <div class="flex-child" id="croatia"></div>
+   </div>
+   <script src="/cors/aip-cors.js" charset="utf-8"></script>
+   <script src="ladderChart.js" charset="utf-8"></script>
+   <script src="burstChart.js" charset="utf-8"></script>
+   <script src="hts.js" charset="utf-8"></script>
+   <script src="croatia_map.js"></script>
+   <script>
+
+      playerSeason = ladderChart();
+      playerSeason.colors({
+         "hardcourt":   "#235dba",
+         "clay":        "#db3e3e",
+         "unknown":     "#a7a59b"
+      });
+      playerSeason.options({
+         display: {
+            source: 'HTS'
+         },
+         plot: {
+            source: {
+               text:           'HTS'
+            },
+            shape: {
+               dateKey:        'date',
+               rungKey:        'rung',
+               colorKey:       'surface',
+               sizeKey:        'rank',
+               shapeSizeBase:  3000,
+
+               typeKey:        'category',
+               typeRange:      ["triangle", "square", "pentagon", "circle"],
+               typeDomain:     ["12", "14", "16", "18"]
+            },
+            content: {
+              rows: ["R128","R64","R32","R16","Q","S","F","W"]
+            }
+         }
+      });
+      playerSeason.events({
+          'item': { 'mouseover': hts.tournamentHover }
+       });
+
+      d3.select('#seasonchart').call(playerSeason);
+
+      hts.init();
+
+   </script>
+</div>
+</body>
+</html>

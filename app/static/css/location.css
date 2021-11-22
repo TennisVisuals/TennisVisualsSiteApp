@@ -1,0 +1,8 @@
+#menu { position: absolute; width: 100%; top: 0px; height: 30px; background-color: black}
+#tava { position: absolute; top: 2px; left: 10px; width: 100px; color: yellow; font-size: 20px; text-decoration: none}
+#search { position: absolute; top: 0px; right: 170px }
+#examples { position: absolute; top: 0px; right: 135px }
+#ilink { position: absolute; top: 0px; right: 100px }
+#twitter { position: absolute; top: 0px; right: 65px }
+#blogger { position: absolute; top: 5px; right: 40px }
+

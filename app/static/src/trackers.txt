@@ -1,0 +1,31 @@
+Tennis: Tracking the Trackers
+
+The idea that match statistics can produce insights that will improve performance inevitably presents itself somewhere in the arc of discovery that is the life of a tennis player.
+
+Of course such claims are practically pedestrian… IBM, SAP and other large companies with data processing prowess to proffer advertise their capabilities and services via Grand Slam events.. and anyone who follows tennis even casually will be aware of products such as PlaySight and Mojjo. 
+
+The first thing that anyone does these days when inspired to dig deeper on any subject is assume “there must be an app for that” and launch a search, and that’s where things get interesting, or, more likely, confusing!
+
+It can be overwhelming and even painful to wade through the dozens of apps related in some way to playing tennis. The App and Play Store reviews are rarely helpful and even sometimes suspicious and the cobbled together articles purporting to review such apps are frequently specious — I’ve actually confirmed with several authors that they never actually used the apps in their ‘Top Ten’ lists.
+
+~~~~~~~~~~~~~~~~~~~~
+The above article links to TennisVisuals hosted real-time interactive review site for tracking products and services
+
+Interactives:
+   1. Force Diagram - Swarm of icons for all Trackerrs
+      a. slider for cost, from FREE...USD$50
+      b. selectors for platform, iOS/Android (what about Services and Desktop OS?)
+      c. slider from score tracking, point tracking, final shot tracking, trajectories and serve positioning
+      d. Check box for Stats Export
+      e. Check box for Point Detail Export
+      f. Check box for Social Networking
+      g. Check box for Cloud Storage/Access
+      h. Requires Network Access
+      i. Requires Account
+
+   2. Release Chart
+      a. X axis is time, y axis is product
+      b. Show all releases and updates for each productA
+      c. Use server to access App/Play Store product pages to pull latest update info
+
+In each chart clicking on a Product's icon loads review of that product

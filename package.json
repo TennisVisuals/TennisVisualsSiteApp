@@ -1,0 +1,27 @@
+{
+  "name": "AiP-Server",
+  "main": "broadcast.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "chardet": "latest",
+    "cheerio": "^0.22.0",
+    "compression": "latest",
+    "cors": "latest",
+    "d3": "^3.5.12",
+    "express": "^4.0.0",
+    "fast-levenshtein": "latest",
+    "fs-extra": "^2.1.2",
+    "jade": "https://registry.npmjs.org/jade/-/jade-1.11.0.tgz",
+    "mail-listener2": "latest",
+    "mongoose": "latest",
+    "nodemailer": "latest",
+    "request": "^2.69.0",
+    "uglifyjs": "^2.4.10",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babili": "0.0.11"
+  }
+}

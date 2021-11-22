@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="description" content="grid space modeling">
+	<meta name="keywords" content="3d,grid,block,modeling">
+	<meta name="robots" content="noindex, nofollow">
+	<title>AiP Court</title>
+	<link rel="icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="./images/AiPCourt.png">
+	<style>
+		body {
+			background-size: cover;
+			background-image: url('./images/AiPCourt.png');
+			background-position: center;
+			background-attachment: fixed;
+		}
+		#invite {
+			border: 5px solid white;
+			background-color: black;
+			color: white;
+			width: 500px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		#invite input {
+			width: 95%;
+			height: 2em;
+			border: 0px;
+			background-color: black;
+			outline: none;
+			color: white;
+			font-size: 14px;
+			font-weight: normal;
+			text-align: center;
+		}
+		#invite div {
+			width: 95%;
+			height: 2em;
+			border: 0px;
+			color: green;
+		}
+	</style>
+	<script>
+		function init() {
+			var input = document.getElementById('request');
+			var invite = document.getElementById('invite');
+			function request() {
+				var ajax = new XMLHttpRequest();
+				ajax.open("GET", "/mv/invite?email=" + input.value, true);
+				ajax.send();
+			}
+			input.addEventListener('keyup', function(ev) {
+				if (ev.keyCode === 13) {
+					request();
+					invite.style.borderColor = '#dfd';
+					input.style.fontWeight = 'bold';
+					input.style.color = '#5f5';
+					input.disabled = true;
+					input.value = 'invitation request sent!';
+					setTimeout(function() {
+						invite.style.display = 'none';
+					}, 5000);
+				}
+			});
+		}
+	</script>
+</head>
+<body onload="init()">
+	<div id="invite">
+		<input id="request" name="email" placeholder="request invitation" title="enter email address and press enter or return"></input>
+	</div>
+</body>
+</html>

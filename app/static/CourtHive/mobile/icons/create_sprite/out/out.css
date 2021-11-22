@@ -1,0 +1,240 @@
+
+.icon {
+  background-image: url('../images/sprite.png');
+}
+
+.icon-finish {
+  background-position: -0px -0px;
+  width: 260px;
+  height: 235px;
+}
+.icon-finishwhite {
+  background-position: -0px -235px;
+  width: 260px;
+  height: 235px;
+}
+.icon-helpwhite {
+  background-position: -0px -470px;
+  width: 260px;
+  height: 260px;
+}
+.icon-broadcastwhite {
+  background-position: -0px -730px;
+  width: 260px;
+  height: 260px;
+}
+.icon-changeblack {
+  background-position: -0px -990px;
+  width: 260px;
+  height: 260px;
+}
+.icon-changewhite {
+  background-position: -0px -1250px;
+  width: 260px;
+  height: 260px;
+}
+.icon-chart {
+  background-position: -0px -1510px;
+  width: 260px;
+  height: 260px;
+}
+.icon-chartwhite {
+  background-position: -0px -1770px;
+  width: 260px;
+  height: 260px;
+}
+.icon-clipboard {
+  background-position: -0px -2030px;
+  width: 260px;
+  height: 260px;
+}
+.icon-clipboardwhite {
+  background-position: -0px -2290px;
+  width: 260px;
+  height: 260px;
+}
+.icon-close {
+  background-position: -0px -2550px;
+  width: 260px;
+  height: 260px;
+}
+.icon-closewhite {
+  background-position: -0px -2810px;
+  width: 260px;
+  height: 260px;
+}
+.icon-exitblack {
+  background-position: -0px -3070px;
+  width: 260px;
+  height: 260px;
+}
+.icon-exitwhite {
+  background-position: -0px -3330px;
+  width: 260px;
+  height: 260px;
+}
+.icon-undoblack {
+  background-position: -0px -3590px;
+  width: 260px;
+  height: 260px;
+}
+.icon-swapwhite {
+  background-position: -0px -3850px;
+  width: 260px;
+  height: 260px;
+}
+.icon-archiveblack {
+  background-position: -0px -4110px;
+  width: 260px;
+  height: 260px;
+}
+.icon-broadcastblack {
+  background-position: -0px -4370px;
+  width: 260px;
+  height: 260px;
+}
+.icon-fishblack {
+  background-position: -0px -4630px;
+  width: 260px;
+  height: 260px;
+}
+.icon-fishwhite {
+  background-position: -0px -4890px;
+  width: 260px;
+  height: 260px;
+}
+.icon-gametree {
+  background-position: -0px -5150px;
+  width: 260px;
+  height: 260px;
+}
+.icon-gametreeblack {
+  background-position: -0px -5410px;
+  width: 260px;
+  height: 260px;
+}
+.icon-helpblack {
+  background-position: -0px -5670px;
+  width: 260px;
+  height: 260px;
+}
+.icon-archivewhite {
+  background-position: -0px -5930px;
+  width: 260px;
+  height: 260px;
+}
+.icon-historyblack {
+  background-position: -0px -6190px;
+  width: 260px;
+  height: 260px;
+}
+.icon-historywhite {
+  background-position: -0px -6450px;
+  width: 260px;
+  height: 260px;
+}
+.icon-infoblack {
+  background-position: -0px -6710px;
+  width: 260px;
+  height: 260px;
+}
+.icon-infowhite {
+  background-position: -0px -6970px;
+  width: 260px;
+  height: 260px;
+}
+.icon-menublack {
+  background-position: -0px -7230px;
+  width: 260px;
+  height: 260px;
+}
+.icon-menuwhite {
+  background-position: -0px -7490px;
+  width: 260px;
+  height: 260px;
+}
+.icon-momentum {
+  background-position: -0px -7750px;
+  width: 260px;
+  height: 260px;
+}
+.icon-momentumblack {
+  background-position: -0px -8010px;
+  width: 260px;
+  height: 260px;
+}
+.icon-recycle {
+  background-position: -0px -8270px;
+  width: 260px;
+  height: 260px;
+}
+.icon-redoblack {
+  background-position: -0px -8530px;
+  width: 260px;
+  height: 260px;
+}
+.icon-redowhite {
+  background-position: -0px -8790px;
+  width: 260px;
+  height: 260px;
+}
+.icon-swapblack {
+  background-position: -0px -9050px;
+  width: 260px;
+  height: 260px;
+}
+.icon-statswhite {
+  background-position: -0px -9310px;
+  width: 260px;
+  height: 260px;
+}
+.icon-settingsblack {
+  background-position: -0px -9570px;
+  width: 260px;
+  height: 260px;
+}
+.icon-settingswhite {
+  background-position: -0px -9830px;
+  width: 260px;
+  height: 260px;
+}
+.icon-shareblack {
+  background-position: -0px -10090px;
+  width: 260px;
+  height: 260px;
+}
+.icon-sharewhite {
+  background-position: -0px -10350px;
+  width: 260px;
+  height: 260px;
+}
+.icon-statsblack {
+  background-position: -0px -10610px;
+  width: 260px;
+  height: 260px;
+}
+.icon-undowhite {
+  background-position: -0px -10870px;
+  width: 260px;
+  height: 260px;
+}
+.icon-saveblack {
+  background-position: -0px -11130px;
+  width: 260px;
+  height: 267px;
+}
+.icon-save {
+  background-position: -0px -11397px;
+  width: 260px;
+  height: 267px;
+}
+.icon-exportwhite {
+  background-position: -0px -11664px;
+  width: 270px;
+  height: 270px;
+}
+.icon-exportblack {
+  background-position: -0px -11934px;
+  width: 270px;
+  height: 270px;
+}

@@ -1,0 +1,99 @@
+PARSING NOTES:
+
+SBA
+
+Columns A+J: G, P, L are redundant because Point Won, Lost or Missed is obvious from rest of code
+        B+I    --> assuming these redundant codes are used in 'database' calculations
+               --> spreadsheet 'COUNTIF' statements don't separate numbers from letters, so high redundancy.
+           : Service court can be inferred from game context, i.e. game score at each point.
+
+Column L   : Does the Rally # include the serve; return of serve?
+
+Shot Codes:
+
+Trailing numbers can always be ignored because they're redundant, either deuce/ad or 1st/2nd serve
+
+H           => indicates a Forehand return winner or forcing error
+G           => indicates a Backhand return shot in all but 4 cases: 1SV0G, 2SV0G, CAG, RAG
+            => indicates a winner or forcing error in all but 5 cases: 1SV0G, 2SV0G, CCG, CAG, RAG
+            => always indicates a return winner or forcing error when BEGINS with G
+
+RRV         => always indicates a return winner or forcing error  ==> RRV can be replaced with G
+RCD         => always indicates a return winner or forcing error  ==> RCD can be replaced with H
+
+CE - can be ignored if RRV/RCD replaced with G/H because G/H by themselves indicate Center
+CR - can be replaced with C if RRV/RCD replaced
+DC - can be replaced with D if RRV/RCD replaced
+DL - can be replaced with P if RRV/RCD replaced
+
+1-6         => starts with serve placement, always a winner of forcing error by server on 3rd rally shot (2nd server shot);
+
+S2-S4       => 'ends with' => Winner or forcing error by server
+R2-R4       => 'ends with' => Winner or forcing error by receiver
+
+~2          => 3-4 shot rally
+~3          => 5-8 shot rally
+~4          =>  >8 shot rally
+
+A           => always indicates a drop shot
+P           => for Forehand (C) and Backhand (R) indicates a passing shot in all but two cases, VCP and VRP, where it indicates topspin
+            => for Return Forehand (G) and Return Backhand (H) indicates Inside-In
+D           => for Return Forehand (G) and Return Backhand (H) indicates Inside-Out
+
+starts with C or D - Forehand
+CL - Forehand down the line
+CC && !CCL - Forehand cross court
+CP - Forehand Passing Shot
+CPC - Forehand Passing Shot Cross
+CPL - Forehand Passing Shot Line
+CPE - Forehand Passing Shot Body
+CE - Forehand Center
+DE - Forehand inside-center
+DC - Forehand inside-out
+DL - Forehand inside-in
+CCC - Forehand cross on short ball
+CCL - Forehand line on short ball
+Forehand (C) with 2nd C = cross court
+Forehand (C) with 3rd C = short ball
+
+starts with R - Backhand
+RL - Backhand down the line
+RS - Backhand Slice
+RC & !RCL - Backhand cross court
+RP - Backhand Passing Shot
+RPC - Backhand Passing Shot Cross
+RPL - Backhand Passing Shot Line
+RPE - Backhand Passing Shot Body
+RE - Backhand Center
+?E - Backhand inside-center
+?C - Backhand inside-out
+?L - Backhand inside-in
+RCC - Backhand cross on short ball
+RCL - Backhand line on short ball
+Backhand (R) with 2nd C = short ball
+
+G - center
+GL - down line
+GC - cross
+GD - inside out
+GP - inside in
+
+TL          => always indicates a lob
+T & !TL     => always indicates 'touch'
+
+$V          => ends with 'V' indicates 'to the net' in all but six cases: 1SV, 2SV, 3SV, 4SV, 5SV, 6SV
+V && !$V && !RRV  => indicates 'Serve & Volley in all but ["VS2", "VS3", "VS4", "VR2", "VR3", "VR4", "VS", "VR"]
+
+
+RCDDC, HD, RCDDL, HP => all indicate the same thing: "First or Second Serve Forehand Return Inside Out Winner or that Provoke the Rival Error"
+
+THEREFORE:
+
+C,D,E & G,H,I
+Unless the code is one character (1,2,3,4,5,6) then:
+   - remove all leading digits
+   - if doesn't start with a digit then remove all TRAILING S2, S3, S4 & R2, R3, R4 (redundant) and STORE Rally Length (2 = 3-4, 3 = 5-8, 4 = >8)
+   - if starts with S, remove the S (confusing)
+   - remove all trailing digits
+   - replace RRV with G
+   - replace RCD with H

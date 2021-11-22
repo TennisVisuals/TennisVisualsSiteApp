@@ -1,0 +1,113 @@
+#mcpEntry {
+   margin-top: 90px;
+}
+
+.flex-nowrap-parent {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  margin: 20px 0px 20px 0px;
+}
+
+.flex-wrap-parent {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  margin: 20px 0px 20px 0px;
+}
+
+.nav-parent {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 15px 0;
+  width: 30px;
+}
+
+.nav-row {
+   margin-top: 10px;
+   width: 100%;
+}
+
+.right-column {
+   width: 100%;
+   flex-grow: 1;
+}
+
+.CH-flex-child {
+   max-height: 400px;
+   flex-grow: 1;
+}
+
+.flex-statPanel {
+   flex-grow: 1;
+   flex-basis: 200px;
+   min-width: 250px;
+   max-width: 800px;
+}
+
+.CH-chart-home {
+   max-width: 820px; 
+}
+
+.CH-header-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  align-items: center;
+}
+
+.CH-body {
+  max-width: 1400px;
+}
+
+.CH-header-child {
+  width: 40%;
+  align-self: center;
+}
+
+.CH-header-pdesc {
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-self: center;
+  overflow: scroll;
+  max-height: inherit;
+  height: inherit;
+}
+
+#CHmomentum { display: none; }
+#CHgametree { display: none; }
+#CHrallytree { display: none; }
+#CHpts { display: none; }
+#CHbasestats { display: none; }
+#CHservestats { display: none; }
+#CHinstructions { display: inline; }
+
+#help {
+   margin: 15px;
+   display: none;
+   background: #FFF;
+}
+
+.helpCol {
+   padding: 5px;
+   border: 1px solid #999;
+}
+
+@media(max-width:1060px) {
+   #spreadsheet { display: none; }
+   #pointDescription { display: none; }
+   .CH-header-pdesc { width: 0%; }
+   .CH-header-child { width: 100%; }
+}

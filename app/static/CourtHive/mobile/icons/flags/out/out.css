@@ -1,0 +1,1040 @@
+
+.icon {
+  background-image: url('../images/sprite.png');
+}
+
+.icon-NOR {
+  background-position: -0px -0px;
+  width: 128px;
+  height: 99px;
+}
+.icon-LBA {
+  background-position: -0px -99px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ALG {
+  background-position: -0px -199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-AND {
+  background-position: -0px -299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ANG {
+  background-position: -0px -399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ANT {
+  background-position: -0px -499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ARG {
+  background-position: -0px -599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ARM {
+  background-position: -0px -699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-AUS {
+  background-position: -0px -799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-AUT {
+  background-position: -0px -899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-AZE {
+  background-position: -0px -999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BAH {
+  background-position: -0px -1099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BAN {
+  background-position: -0px -1199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BAR {
+  background-position: -0px -1299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BDI {
+  background-position: -0px -1399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BEL {
+  background-position: -0px -1499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BEN {
+  background-position: -0px -1599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BGR {
+  background-position: -0px -1699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BHU {
+  background-position: -0px -1799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BIH {
+  background-position: -0px -1899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BIZ {
+  background-position: -0px -1999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BLR {
+  background-position: -0px -2099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BOL {
+  background-position: -0px -2199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BOT {
+  background-position: -0px -2299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BRA {
+  background-position: -0px -2399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BRN {
+  background-position: -0px -2499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BRU {
+  background-position: -0px -2599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BUL {
+  background-position: -0px -2699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-BUR {
+  background-position: -0px -2799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CAF {
+  background-position: -0px -2899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CAM {
+  background-position: -0px -2999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CAN {
+  background-position: -0px -3099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CGO {
+  background-position: -0px -3199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CHA {
+  background-position: -0px -3299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CHE {
+  background-position: -0px -3399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CHI {
+  background-position: -0px -3499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CHN {
+  background-position: -0px -3599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CIV {
+  background-position: -0px -3699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CMR {
+  background-position: -0px -3799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-COD {
+  background-position: -0px -3899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-COL {
+  background-position: -0px -3999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-COM {
+  background-position: -0px -4099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CPV {
+  background-position: -0px -4199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CRC {
+  background-position: -0px -4299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CRO {
+  background-position: -0px -4399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CUB {
+  background-position: -0px -4499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CYP {
+  background-position: -0px -4599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-CZE {
+  background-position: -0px -4699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DEN {
+  background-position: -0px -4799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DEU {
+  background-position: -0px -4899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DJI {
+  background-position: -0px -4999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DMA {
+  background-position: -0px -5099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DNK {
+  background-position: -0px -5199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-DOM {
+  background-position: -0px -5299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ECU {
+  background-position: -0px -5399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-EGY {
+  background-position: -0px -5499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ERI {
+  background-position: -0px -5599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ESA {
+  background-position: -0px -5699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ESP {
+  background-position: -0px -5799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-EST {
+  background-position: -0px -5899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ETH {
+  background-position: -0px -5999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-FIJ {
+  background-position: -0px -6099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-FIN {
+  background-position: -0px -6199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-FRA {
+  background-position: -0px -6299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-FSM {
+  background-position: -0px -6399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GAB {
+  background-position: -0px -6499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GAM {
+  background-position: -0px -6599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GBR {
+  background-position: -0px -6699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GBS {
+  background-position: -0px -6799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GEO {
+  background-position: -0px -6899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GEQ {
+  background-position: -0px -6999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GER {
+  background-position: -0px -7099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GHA {
+  background-position: -0px -7199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GRE {
+  background-position: -0px -7299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GRN {
+  background-position: -0px -7399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GUA {
+  background-position: -0px -7499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GUI {
+  background-position: -0px -7599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-GUY {
+  background-position: -0px -7699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-HAI {
+  background-position: -0px -7799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ZAM {
+  background-position: -0px -7899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-HON {
+  background-position: -0px -7999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-HUN {
+  background-position: -0px -8099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-INA {
+  background-position: -0px -8199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-IND {
+  background-position: -0px -8299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-IRI {
+  background-position: -0px -8399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-IRL {
+  background-position: -0px -8499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-IRQ {
+  background-position: -0px -8599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ISL {
+  background-position: -0px -8699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ISR {
+  background-position: -0px -8799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ITA {
+  background-position: -0px -8899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-JAM {
+  background-position: -0px -8999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-JAP {
+  background-position: -0px -9099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-JOR {
+  background-position: -0px -9199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-JPN {
+  background-position: -0px -9299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KAZ {
+  background-position: -0px -9399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KEN {
+  background-position: -0px -9499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KGZ {
+  background-position: -0px -9599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KIR {
+  background-position: -0px -9699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KOR {
+  background-position: -0px -9799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KSA {
+  background-position: -0px -9899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-KUW {
+  background-position: -0px -9999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LAO {
+  background-position: -0px -10099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LAT {
+  background-position: -0px -10199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ALB {
+  background-position: -0px -10299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LBR {
+  background-position: -0px -10399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LCA {
+  background-position: -0px -10499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LES {
+  background-position: -0px -10599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LIB {
+  background-position: -0px -10699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LIE {
+  background-position: -0px -10799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LTU {
+  background-position: -0px -10899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-LUX {
+  background-position: -0px -10999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MAD {
+  background-position: -0px -11099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MAR {
+  background-position: -0px -11199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MAS {
+  background-position: -0px -11299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MAW {
+  background-position: -0px -11399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MDA {
+  background-position: -0px -11499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MDV {
+  background-position: -0px -11599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MEX {
+  background-position: -0px -11699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MGL {
+  background-position: -0px -11799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MGO {
+  background-position: -0px -11899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MHL {
+  background-position: -0px -11999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MKD {
+  background-position: -0px -12099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MLI {
+  background-position: -0px -12199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MLT {
+  background-position: -0px -12299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MNE {
+  background-position: -0px -12399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MON {
+  background-position: -0px -12499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MOZ {
+  background-position: -0px -12599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MRI {
+  background-position: -0px -12699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MTN {
+  background-position: -0px -12799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-MYA {
+  background-position: -0px -12899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NAM {
+  background-position: -0px -12999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NCA {
+  background-position: -0px -13099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NED {
+  background-position: -0px -13199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NEP {
+  background-position: -0px -13299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NGR {
+  background-position: -0px -13399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NIG {
+  background-position: -0px -13499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NLD {
+  background-position: -0px -13599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-AFG {
+  background-position: -0px -13699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NRU {
+  background-position: -0px -13799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-NZL {
+  background-position: -0px -13899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-OMA {
+  background-position: -0px -13999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PAK {
+  background-position: -0px -14099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PAN {
+  background-position: -0px -14199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PAR {
+  background-position: -0px -14299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PER {
+  background-position: -0px -14399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PHI {
+  background-position: -0px -14499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PLE {
+  background-position: -0px -14599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PLW {
+  background-position: -0px -14699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PNG {
+  background-position: -0px -14799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-POL {
+  background-position: -0px -14899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-POR {
+  background-position: -0px -14999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-PRK {
+  background-position: -0px -15099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-QAT {
+  background-position: -0px -15199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ROU {
+  background-position: -0px -15299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-RSA {
+  background-position: -0px -15399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-RUS {
+  background-position: -0px -15499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-RWA {
+  background-position: -0px -15599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SAM {
+  background-position: -0px -15699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SCG {
+  background-position: -0px -15799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SEN {
+  background-position: -0px -15899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SEY {
+  background-position: -0px -15999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SIN {
+  background-position: -0px -16099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SKN {
+  background-position: -0px -16199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SLE {
+  background-position: -0px -16299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SLO {
+  background-position: -0px -16399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SMR {
+  background-position: -0px -16499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SOL {
+  background-position: -0px -16599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SOM {
+  background-position: -0px -16699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SRB {
+  background-position: -0px -16799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SRI {
+  background-position: -0px -16899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SSD {
+  background-position: -0px -16999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-STP {
+  background-position: -0px -17099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SUD {
+  background-position: -0px -17199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SUI {
+  background-position: -0px -17299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SUR {
+  background-position: -0px -17399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SVK {
+  background-position: -0px -17499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SVN {
+  background-position: -0px -17599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SWE {
+  background-position: -0px -17699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SWZ {
+  background-position: -0px -17799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-SYR {
+  background-position: -0px -17899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TAN {
+  background-position: -0px -17999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TGA {
+  background-position: -0px -18099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-THA {
+  background-position: -0px -18199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TJK {
+  background-position: -0px -18299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TKM {
+  background-position: -0px -18399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TLS {
+  background-position: -0px -18499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TOG {
+  background-position: -0px -18599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TPE {
+  background-position: -0px -18699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TRI {
+  background-position: -0px -18799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TUN {
+  background-position: -0px -18899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TUR {
+  background-position: -0px -18999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-TUV {
+  background-position: -0px -19099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-UAE {
+  background-position: -0px -19199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-UGA {
+  background-position: -0px -19299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-UKR {
+  background-position: -0px -19399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-URU {
+  background-position: -0px -19499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-USA {
+  background-position: -0px -19599px;
+  width: 128px;
+  height: 100px;
+}
+.icon-UZB {
+  background-position: -0px -19699px;
+  width: 128px;
+  height: 100px;
+}
+.icon-VAN {
+  background-position: -0px -19799px;
+  width: 128px;
+  height: 100px;
+}
+.icon-VAT {
+  background-position: -0px -19899px;
+  width: 128px;
+  height: 100px;
+}
+.icon-VEN {
+  background-position: -0px -19999px;
+  width: 128px;
+  height: 100px;
+}
+.icon-VIE {
+  background-position: -0px -20099px;
+  width: 128px;
+  height: 100px;
+}
+.icon-VIN {
+  background-position: -0px -20199px;
+  width: 128px;
+  height: 100px;
+}
+.icon-XKX {
+  background-position: -0px -20299px;
+  width: 128px;
+  height: 100px;
+}
+.icon-YEM {
+  background-position: -0px -20399px;
+  width: 128px;
+  height: 100px;
+}
+.icon-ZIM {
+  background-position: -0px -20499px;
+  width: 128px;
+  height: 100px;
+}
+.icon-HKG {
+  background-position: -0px -20599px;
+  width: 128px;
+  height: 105px;
+}

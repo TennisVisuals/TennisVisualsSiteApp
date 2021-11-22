@@ -1,2 +1,1 @@
-# TennisVisuals.com
 # TennisVisuals

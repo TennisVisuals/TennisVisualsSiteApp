@@ -10,7 +10,7 @@
     "d3": "^3.5.12",
     "express": "^4.0.0",
     "fast-levenshtein": "latest",
-    "fs-extra": "^2.1.2",
+    "fs-extra": "^11.0.0",
     "jade": "https://registry.npmjs.org/jade/-/jade-1.11.0.tgz",
     "mail-listener2": "latest",
     "mongoose": "latest",
